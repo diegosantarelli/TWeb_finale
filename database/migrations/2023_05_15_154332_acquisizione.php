@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Acquisizione', function (Blueprint $table) {
-            $table->string('Username', 25)->primary();
-            $table->bigIncrements('Codice_coupon')->primary();
+            $table->bigIncrements('id');
+            $table->string('Username', 25);
+            $table->bigInteger('Codice_coupon')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('Username')->references('Username')->on('Utenti');
+            $table->foreign('Codice_coupon')->references('Codice_coupon')->on('Coupons');
         });
     }
 

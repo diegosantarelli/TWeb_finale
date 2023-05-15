@@ -14,11 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Inclusione', function (Blueprint $table) {
-            $table->bigIncrements('IdAbbinamento')->primary(); 
-            $table->bigIncrements('IdOfferta')->primary();
+            $table->bigIncrements('id');
+            $table->bigInteger('IdAbbinamento')->unsigned();
+            $table->bigInteger('IdOfferta')->unsigned();
+            $table->foreign('IdAbbinamento')->references('IdAbbinamento')->on('Abbinamenti');
+            $table->foreign('IdOfferta')->references('IdOfferta')->on('Offerte');
+            $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

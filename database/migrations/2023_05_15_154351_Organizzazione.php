@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Organizzazione', function (Blueprint $table) {
-            $table->string('Username', 25)->primary();
-            $table->bigIncrements('IdOfferta')->primary();
+            $table->bigIncrements('id');
+            $table->string('Username', 25);
+            $table->bigInteger('IdOfferta')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('Username')->references('Username')->on('Utenti');
+            $table->foreign('IdOfferta')->references('IdOfferta')->on('Offerte');
         });
     }
 
