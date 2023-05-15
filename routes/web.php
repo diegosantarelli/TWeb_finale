@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,43 +13,34 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [PublicController::class, 'showCatalog1'])
-        ->name('catalog1');
+/* Rotta per la vista 'home' */
+Route::get('/', [PublicController::class, 'showHome']) ->name('home');
 
-Route::get('/selTopCat/{topCatId}', [PublicController::class, 'showCatalog2'])
-        ->name('catalog2');
+/* Rotta per la vista 'catalogo' */
+Route::get('/catalogo', [PublicController::class, 'showCatalog'])->name('catalogo');
 
-Route::get('/selTopCat/{topCatId}/selCat/{catId}', [PublicController::class, 'showCatalog3'])
-        ->name('catalog3');
+/* Rotta per la vista 'faq' */
+Route::get('/faq', [PublicController::class, 'showFaq']) ->name('faq');
 
-Route::get('/admin', [AdminController::class, 'index'])
-        ->name('admin');
+/* Rotta per la vista 'info' */
+Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 
-Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
-        ->name('newproduct');
+/* Rotta per la vista 'login' */
+Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');
 
-Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
-        ->name('newproduct.store');
+/* Rotta per la vista 'coupon' */
+Route::get('/coupon', [PublicController::class, 'showCoupon']) ->name('coupon');
 
-Route::get('/user', [UserController::class, 'index'])
-        ->name('user')->middleware('can:isUser');
+/* Rotta per la vista 'registrati' */
+Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('registrazione');
 
 
-Route::view('/where', 'where')
-        ->name('where');
 
-Route::view('/who', 'who')
-        ->name('who');
 
-/*  Rotte aggiunte da Breeze
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-*/
-require __DIR__.'/auth.php';
+
+
+
+        
