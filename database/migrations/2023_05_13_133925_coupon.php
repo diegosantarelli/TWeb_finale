@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Coupon', function (Blueprint $table) {
-            $table->bigIncrements('Codice coupon');
+        Schema::create('Coupons', function (Blueprint $table) {
+            $table->bigIncrements('Codice_coupon');
             $table->string('Combinazione');
-            
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Coupons');
     }
 };

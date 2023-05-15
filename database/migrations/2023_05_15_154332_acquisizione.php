@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Amministratore', function (Blueprint $table) {
-            $table->bigIncrements('IdAmministratore');
-            $table->string('Username',25);
-            $table->string('Nome',25);  
-            $table->string('Cognome',25); 
-            $table->string('Password',25);                    
+        Schema::create('Acquisizione', function (Blueprint $table) {
+            $table->string('Username', 25)->primary();
+            $table->bigIncrements('Codice_coupon')->primary();
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Acquisizione');
     }
 };

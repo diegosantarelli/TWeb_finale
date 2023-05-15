@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('Inclusione', function (Blueprint $table) {
+            $table->bigIncrements('IdAbbinamento')->primary(); 
+            $table->bigIncrements('IdOfferta')->primary();
+        });
     }
 
     /**
      * Reverse the migrations.
-     * Azzera la tabella migrazione.
+     *
      * @return void
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Inclusione');
     }
 };

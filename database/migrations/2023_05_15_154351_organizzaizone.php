@@ -13,7 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('Organizzazione', function (Blueprint $table) {
+            $table->string('Username', 25)->primary();
+            $table->bigIncrements('IdOfferta')->primary();
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Organizzazione');
     }
 };

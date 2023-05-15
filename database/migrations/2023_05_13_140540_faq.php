@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Faq', function (Blueprint $table) {
+        Schema::create('Faqs', function (Blueprint $table) {
             $table->bigIncrements('NumeroDomanda');
-            /* aggiungere contenuto e risposta */
+            $table->string('Domanda');
+            $table->string('Risposta');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Faqs');
     }
 };

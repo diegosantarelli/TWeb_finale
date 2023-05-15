@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Abbinamento', function (Blueprint $table) {
-            $table->bigIncrements('IdAbbinamento');
-                                 
+        Schema::create('Abbinamenti', function (Blueprint $table) {
+            $table->bigIncrements('IdAbbinamento');                     
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Abbinamenti');
     }
 };
