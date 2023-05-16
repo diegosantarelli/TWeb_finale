@@ -1,6 +1,6 @@
 @extends('public')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/Catalogo.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
     <div id="container">
 
     
@@ -8,7 +8,7 @@
             <h3>Scegli una categoria</h3>
             <br>
             @foreach($categorie as $categoria)
-            <label><input id="opt" name="categoria" type="radio">{{$categoria}}</label><br>
+            <a href="{{route('catalogo', [$categoria])}}">{{$categoria}}</a><br>
             @endforeach
 
         </div>

@@ -18,11 +18,18 @@ class PublicController extends Controller
     /**
      * Show catalog page for a public user.
      */
-    public function showCatalog(): View {
+    public function showCatalog($Categoria = null): View {
+        $categorie = Offerta::all()->pluck('Categoria')->unique();
+        if (isset($Categoria)){
+            $offerte = Offerta::all()->where('Categoria',$Categoria);
+            
+        } else {
         $offerte = Offerta::all();
-        $categorie = $offerte->pluck('Categoria')->unique();
-
+        
+        }
+        
         return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie);
+        
     }
     /**
      * Show faq page for a public user.

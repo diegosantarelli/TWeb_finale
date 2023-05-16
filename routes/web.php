@@ -17,7 +17,7 @@ use App\Http\Controllers\PublicController;
 Route::get('/', [PublicController::class, 'showHome']) ->name('home');
 
 /* Rotta per la vista 'catalogo' */
-Route::get('/catalogo', [PublicController::class, 'showCatalog'])->name('catalogo');
+Route::get('/catalogo/{Categoria?}', [PublicController::class, 'showCatalog'])->name('catalogo');
 
 /* Rotta per la vista 'faq' */
 Route::get('/faq', [PublicController::class, 'showFaq']) ->name('faq');
@@ -35,7 +35,7 @@ Route::get('/coupon/{IdOfferta}', [PublicController::class, 'showCoupon']) ->nam
 Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('registrazione');
 
 
-Route::get('/coupon1', [PublicController::class, 'showCoupon1']) ->name('coupon1');
+
 
 
 
