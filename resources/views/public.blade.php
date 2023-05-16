@@ -30,7 +30,7 @@
             <li><a href="{{route('catalogo')}}">Catalogo</a></li>
             <li><a href="{{route('faq')}}">FAQ</a></li>
             <li><a href="{{route('info')}}" >Info</a></li>
-            <li><input type="search" placeholder="Cerca su Cheapest Coupons"> <i class="fa fa-times search-clear"></i> </li> 
+            <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> 
             <li><a href="{{route('login')}}" class="accedi">Accedi</a></li>
             <li><a href="{{route('registrazione')}}" class="registrati">Registrati</a></li>
 

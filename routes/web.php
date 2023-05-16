@@ -35,7 +35,7 @@ Route::get('/coupon/{IdOfferta}', [PublicController::class, 'showCoupon']) ->nam
 Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('registrazione');
 
 
-
+Route::get('/search', [PublicController::class, 'search'])->name('search');
 
 
 

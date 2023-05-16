@@ -2,6 +2,13 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
     <div id="container">
+        
+    <form action="{{ route('search')}}" method="GET">
+  <input type="text" name="keyword" placeholder="Inserisci l'oggetto dell'offerta">
+  <button type="submit">Cerca</button>
+</form>
+
+
 
     
         <div id="categorie">

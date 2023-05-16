@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Offerta extends Model
 {
     protected $table = 'Offerte';
-
-    // prodId non modificabile da un HTTP Request (Mass Assignment)
-    
+/*
+    public function getCat(){
+        $categorie = Offerta::all()->pluck('Categoria')->unique();
+        return $categorie;
+    }
+    */
 
     public $timestamps = false;
 }

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
 use App\Models\Offerta;
+use Illuminate\Http\Request;
  
 class PublicController extends Controller
 {
@@ -18,7 +19,7 @@ class PublicController extends Controller
     /**
      * Show catalog page for a public user.
      */
-    public function showCatalog($Categoria = null): View {
+    public function showCatalog($Categoria = null,$Oggetto = null): View {
         $categorie = Offerta::all()->pluck('Categoria')->unique();
         if (isset($Categoria)){
             $offerte = Offerta::all()->where('Categoria',$Categoria);
@@ -29,6 +30,7 @@ class PublicController extends Controller
         }
         
         return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie);
+        
         
     }
     /**
@@ -66,6 +68,17 @@ class PublicController extends Controller
 
     public function showCoupon1(): View {
         return view('coupon');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $results = Offerta::where('Oggetto', 'like', '%' . $keyword . '%')->get();
+
+        $categorie = Offerta::all()->pluck('Categoria')->unique();  
+        
+        return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
     }
     
     
