@@ -18,7 +18,8 @@ class PublicController extends Controller
      * Show catalog page for a public user.
      */
     public function showCatalog(): View {
-        return view('catalogo');
+        $aziende = Azienda::all();
+        return view('catalogo',['aziende' => $aziende]);
     }
     /**
      * Show faq page for a public user.

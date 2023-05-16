@@ -22,62 +22,21 @@
 
     <div id="catalogo">
         <h2>Offerte</h2>
-
+    @foreach($offerte as $offerta)
     <a class="card" href="{{route('coupon')}}">
         <img src="img/amazon.png" href="{{route('coupon')}}">
         <div class="container_card">
-            <p>Amazon</p>
+            <p>$azienda->Oggetto</p>
         </div>
     </a>
-
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
+    @endforeach
     
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
 
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-     <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-     <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-   <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
+    @foreach($aziende as $azienda)
+    <p>{{ $azienda->Nome }}</p>
+    <p>{{ $azienda->Sede }}</p>
+    <p>{{ $azienda->Tipologia }}</p>
+    @endforeach
         </div>
 
     </div>
