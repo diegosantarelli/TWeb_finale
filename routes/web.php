@@ -29,10 +29,13 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');
 
 /* Rotta per la vista 'coupon' */
-Route::get('/coupon', [PublicController::class, 'showCoupon']) ->name('coupon');
+Route::get('/coupon/{IdOfferta}', [PublicController::class, 'showCoupon']) ->name('coupon');
 
 /* Rotta per la vista 'registrati' */
 Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('registrazione');
+
+
+Route::get('/coupon1', [PublicController::class, 'showCoupon1']) ->name('coupon1');
 
 
 

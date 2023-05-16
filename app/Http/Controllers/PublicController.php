@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
+use App\Models\Offerta;
  
 class PublicController extends Controller
 {
@@ -18,8 +19,10 @@ class PublicController extends Controller
      * Show catalog page for a public user.
      */
     public function showCatalog(): View {
-        $aziende = Azienda::all();
-        return view('catalogo',['aziende' => $aziende]);
+        $offerte = Offerta::all();
+        $categorie = $offerte->pluck('Categoria')->unique();
+
+        return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie);
     }
     /**
      * Show faq page for a public user.
@@ -42,15 +45,21 @@ class PublicController extends Controller
     /**
      * Show coupon page for a public user.
      */
-    public function showCoupon(): View {
-        return view('coupon');
+    public function showCoupon($IdOfferta): View {
+        $selOfferta = Offerta::all()->where('IdOfferta', $IdOfferta)->first();
+        
+        return view('coupon')->with('selOfferta',$selOfferta);
+        
+        
     }
 
     public function showSignIn(): View {
         return view('registrazione');
     }
 
-
+    public function showCoupon1(): View {
+        return view('coupon');
+    }
     
     
 }
