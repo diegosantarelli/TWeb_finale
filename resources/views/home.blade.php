@@ -5,16 +5,16 @@
 
 <div class="slideshow-container">
 
-<a href="{{route('coupon')}}" > <div  class="mySlides fade">
+<a  > <div  class="mySlides fade">
   <img src="img/coupon.jpg">
 </div> </a>
 
-<a href="{{route('coupon')}}">
+<a >
 <div class="mySlides fade">
   <img src="img/coupon1.jpg">
 </div> </a>
 
-<a href="{{route('coupon')}}" >
+<a  >
 <div class="mySlides fade">
   <img src="img/coupon2.jpg">
 </div> </a>
@@ -69,61 +69,7 @@ dots[slideIndex-1].className += " active";
     
     <h3 class="card_title">Offerte in evidenza</h3>
 
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png" href="{{route('coupon')}}">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
     
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-     <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-     <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-    <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
-
-   <a class="card" href="{{route('coupon')}}">
-        <img src="img/amazon.png">
-        <div class="container_card">
-            <p>Amazon</p>
-        </div>
-    </a>
 </div>
 
 </div>
