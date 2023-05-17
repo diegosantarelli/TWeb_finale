@@ -4,11 +4,12 @@
     <div id="container">
      
     <div class="search_container">
-    <form action="{{ route('catalog.search') }}" method="GET" class="search-bar">
-        <input type="text" name="query" placeholder="Cerca per oggetto">
-        <input type="text" name="keyword" placeholder="Cerca per azienda">
-        <button type="submit">Cerca</button>
-    </form>
+        <h2>puo ricercare un'offerta per oggetto <b>E/O</b> per azienda</h2>
+    <form action="{{ route('search')}}" method="GET">
+            <label for="oggetto">Oggetto:</label><input type="text" name="oggetto" placeholder="Inserisci l'oggetto dell'offerta">
+            <label for="azienda">Azienda:</label><input type="text" name="azienda" placeholder="Inserisci l'azienda dell'offerta">
+            <button type="submit">Cerca</button>
+        </form> 
 </div>
 
 
@@ -17,7 +18,9 @@
         <br>
             @foreach($categorie as $categoria)
             <label>
-            <input type="radio" name="categoria" value="{{ $categoria }}" onclick="window.location.href='{{ route('catalogo', [$categoria]) }}'" @if ($categoria === $Categoria) checked @endif>
+            <input type="radio" name="categoria" value="{{ $categoria }}" onclick="window.location.href='{{ route('catalogo', [$categoria]) }}'" 
+            @isset($catselezionata){{$categoria == $catselezionata ? 'checked' : ''}} @endisset>
+            
             {{ $categoria }}
             </label><br>
             @endforeach
@@ -25,7 +28,10 @@
 
    <div id="catalogo">
         <h2>Offerte</h2>
-        @foreach($offerte as $offerta)
+        @if (count($offerte) == 0)
+    <p>Siamo spiacenti ma i parametri da lei selezionati non hanno prodotto nessuno risultato</p>
+    @else
+    @foreach($offerte as $offerta)
             <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
                 <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >
             <div class="container_card">
@@ -33,11 +39,14 @@
             </div>
             </a>
         @endforeach
+    @endif
+        
+   
     </div>
   
     
    <div class="offerta">
-            @foreach ($results as $offerta)
+            @foreach ($offerte as $offerta)
             <p>{{ $offerta->nome }}</p>
             <!-- <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
                 <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >

@@ -22,8 +22,8 @@ class PublicController extends Controller
     /**
      * Show catalog page for a public user.
      */
-    /*
-    public function showCatalog($Categoria = null,$Oggetto = null): View {
+    
+    public function showCatalog($Categoria = null): View {
         $categorie = Offerta::all()->pluck('Categoria')->unique();
         if (isset($Categoria)){
             $offerte = Offerta::all()->where('Categoria',$Categoria);
@@ -33,8 +33,14 @@ class PublicController extends Controller
         
         }
         
-        return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie)->with('Categoria', $Categoria);;
-    } */
+            return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie)->with('catselezionata', $Categoria);
+        
+
+        
+        
+        
+    } 
+    /*
     public function showCatalog($Categoria = null, $Oggetto = null)
     {
         $categorie = Offerta::all()->pluck('Categoria')->unique();
@@ -80,7 +86,7 @@ class PublicController extends Controller
     public function showSignIn(): View {
         return view('registrazione');
     }
-
+/*
     public function search(Request $request)
     {
         $query = $request->input('query');
@@ -100,6 +106,33 @@ class PublicController extends Controller
         
         return view('catalogo', ['offerte' => $results]);
     }
-    
+    */
+    public function search(Request $request)
+    {
+        $oggetto = $request->input('oggetto');
+        $azienda = $request->input('azienda');
+        
+        if(isset($oggetto)&&($azienda==null))
+        {
+            $results = Offerta::where('Oggetto', 'like', '%' . $oggetto . '%')->get();
+        }
+        else if(isset($azienda)&&($oggetto==null))
+        {
+            $results = Offerta::where('Azienda', 'like', '%' . $azienda . '%')->get();
+        }
+
+        else if(isset($oggetto)&&(isset($azienda))) {
+            $results = Offerta::where('Azienda', 'like', '%' . $azienda . '%')->where('Oggetto', 'like', '%' . $oggetto . '%')->get();
+        }
+        else{
+            $results = Offerta::all();
+        }
+        
+
+        $categorie = Offerta::all()->pluck('Categoria')->unique();  
+        
+        return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
+        
+    }
   
 }
