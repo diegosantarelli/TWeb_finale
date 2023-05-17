@@ -5,7 +5,7 @@
 
 <div class="slideshow-container">
 
-<a  > <div  class="mySlides fade">
+<a> <div  class="mySlides fade">
   <img src="img/coupon.jpg">
 </div> </a>
 
