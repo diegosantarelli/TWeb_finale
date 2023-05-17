@@ -82,6 +82,7 @@ class PublicController extends Controller
     }
 
 
+    /*
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
@@ -92,6 +93,17 @@ class PublicController extends Controller
         
         return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
     }
+    */
+    /*
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
     
+        $results = Offerta::where('Categoria', 'like', '%'.$query.'%')
+                        ->orWhere('Oggetto', 'like', '%'.$query.'%')
+                        ->get();
     
+        return view('catalogo', ['results' => $results]);
+    }
+    */
 }
