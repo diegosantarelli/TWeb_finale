@@ -29,9 +29,7 @@ class PublicController extends Controller
         
         }
         
-        return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie);
-        
-        
+        return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie)->with('Categoria', $Categoria);;
     }
     /**
      * Show faq page for a public user.

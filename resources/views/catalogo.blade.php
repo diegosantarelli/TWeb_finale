@@ -10,31 +10,32 @@
 
 
 
-    
-        <div id="categorie">
-            <h3>Scegli una categoria</h3>
-            <br>
-            @foreach($categorie as $categoria)
-            <a href="{{route('catalogo', [$categoria])}}">{{$categoria}}</a><br>
-            @endforeach
+   
 
-        </div>
+    <div id="categorie">
+    <h3>Scegli una categoria</h3>
+    <br>
+    @foreach($categorie as $categoria)
+        <label>
+            <input type="radio" name="categoria" value="{{ $categoria }}" onclick="window.location.href='{{ route('catalogo', [$categoria]) }}'" @if ($categoria === $Categoria) checked @endif>
+            {{ $categoria }}
+        </label><br>
+    @endforeach
+</div>
+
+
 
     <div id="catalogo">
         <h2>Offerte</h2>
         @foreach($offerte as $offerta)
-        <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
-        <img src="img/amazon.png" >
+            <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
+                <img src="img/amazon.png" >
+            <div class="container_card">
+                <p>{{$offerta->Oggetto}}</p>
+            </div>
+            </a>
+        @endforeach
     
-        <div class="container_card">
-            <p>{{$offerta->Oggetto}}</p>
-        </div>
-    </a>
-    @endforeach
-    
-
-    
-        </div>
 
     </div>
 
