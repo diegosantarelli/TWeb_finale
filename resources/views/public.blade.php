@@ -26,14 +26,14 @@
 
         <ul class="list">
 
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('catalogo')}}">Catalogo</a></li>
-            <li><a href="{{route('faq')}}">FAQ</a></li>
-            <li><a href="{{route('info')}}" >Info</a></li>
+            <li class="center"><a href="{{route('home')}}">Home</a></li>
+            <li class="center"><a href="{{route('catalogo')}}">Catalogo</a></li>
+            <li class="center"><a href="{{route('faq')}}">FAQs</a></li>
+            <li class="center"><a href="{{route('info')}}" >Info</a></li>
             <!-- <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> -->
-            <li> <form action="{{ route('search')}}" method="GET"><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> <button type="submit">Cerca</button> </form> 
-            <li><a href="{{route('login')}}" class="accedi">Accedi</a></li>
-            <li><a href="{{route('registrazione')}}" class="registrati">Registrati</a></li>
+            <!-- <li> <form action="{{ route('search')}}" method="GET"><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> <button type="submit">Cerca</button> </form> --> 
+            <li class="center"><a href="{{route('login')}}" class="accedi">Accedi</a></li>
+            <li class="center"><a href="{{route('registrazione')}}" class="registrati">Registrati</a></li>
 
 
         </ul>
