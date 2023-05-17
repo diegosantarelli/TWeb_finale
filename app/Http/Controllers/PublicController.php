@@ -19,6 +19,7 @@ class PublicController extends Controller
     /**
      * Show catalog page for a public user.
      */
+    /*
     public function showCatalog($Categoria = null,$Oggetto = null): View {
         $categorie = Offerta::all()->pluck('Categoria')->unique();
         if (isset($Categoria)){
@@ -29,10 +30,23 @@ class PublicController extends Controller
         
         }
         
-        return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie);
+        return view('catalogo')->with('offerte', $offerte)->with('categorie',$categorie)->with('Categoria', $Categoria);;
+    } */
+    public function showCatalog($Categoria = null, $Oggetto = null)
+    {
+        $categorie = Offerta::all()->pluck('Categoria')->unique();
         
+        if (isset($Categoria)) {
+            $offerte = Offerta::where('Categoria', $Categoria)->get();
+        } else {
+            $offerte = Offerta::all();
+            $Categoria = null; // Inizializza $Categoria se non è stato fornito alcun valore
+        }
         
+        return view('catalogo', compact('offerte', 'categorie', 'Categoria'))->with('Categoria', $Categoria);
     }
+    
+
     /**
      * Show faq page for a public user.
      */

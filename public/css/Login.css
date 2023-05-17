@@ -1,6 +1,6 @@
 /* ----------------------------------
 STILE LOGIN CONTAINER
-------------------------------------- */
+
 
 .login-container{
     width: 400px;
@@ -96,5 +96,65 @@ STILE LOGIN CONTAINER
   text-decoration: underline;
 
 }
+------------------------------------- */
 
+.static {
+  text-align: center;
+}
+
+.static h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.static p {
+  margin-bottom: 20px;
+}
+
+.container-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap-contact1 {
+  width: 400px;
+  padding: 40px 30px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.label-input {
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.errors {
+  color: red;
+  margin-bottom: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.form-btn1 {
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-btn1:hover {
+  background-color: #45a049;
+}
 
