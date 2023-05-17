@@ -1,8 +1,9 @@
-@extends('layouts.public')
+@extends('public')
 
 @section('title', 'Registrazione')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('css/Login.css')}}">
 <div class="static">
     <h3>Login</h3>
     <p>Utilizza questa form per autenticarti al sito</p>

@@ -3,25 +3,21 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
     <div id="container">
         
-    <form action="{{ route('search')}}" method="GET">
-  <input type="text" name="keyword" placeholder="Inserisci l'oggetto dell'offerta">
-  <button type="submit">Cerca</button>
-</form>
-
-
-
-   
+        <!-- <form action="{{ route('search')}}" method="GET">
+            <input type="text" name="keyword" placeholder="Inserisci l'oggetto dell'offerta">
+            <button type="submit">Cerca</button>
+        </form> -->
 
     <div id="categorie">
-    <h3>Scegli una categoria</h3>
-    <br>
-    @foreach($categorie as $categoria)
-        <label>
+        <h3>Scegli una categoria</h3>
+        <br>
+            @foreach($categorie as $categoria)
+            <label>
             <input type="radio" name="categoria" value="{{ $categoria }}" onclick="window.location.href='{{ route('catalogo', [$categoria]) }}'" @if ($categoria === $Categoria) checked @endif>
             {{ $categoria }}
-        </label><br>
-    @endforeach
-</div>
+            </label><br>
+            @endforeach
+    </div>
 
 
 
