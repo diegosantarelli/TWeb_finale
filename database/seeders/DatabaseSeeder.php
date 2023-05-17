@@ -34,9 +34,12 @@ class DatabaseSeeder extends Seeder
         ]);
          */ 
         DB::table('Offerte')->insert([
-            ['Categoria'=>'prova1','Scadenza'=>'20/10/2020','Oggetto'=>'prova1','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
-            ['Categoria'=>'prova1','Scadenza'=>'20/10/2020','Oggetto'=>'prova1','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
-            ['Categoria'=>'prova2','Scadenza'=>'20/10/2020','Oggetto'=>'prova2','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
+            ['Categoria'=>'Animali','Scadenza'=>'20/10/2020','Oggetto'=>'Tiragraffi per gatto','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
+            ['Categoria'=>'Bambini','Scadenza'=>'20/10/2020','Oggetto'=>'Accappatoio','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
+            ['Categoria'=>'Elettronica','Scadenza'=>'20/10/2020','Oggetto'=>'Console PS5','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
+            ['Categoria'=>'Moda','Scadenza'=>'20/10/2020','Oggetto'=>'Vestito','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
+            ['Categoria'=>'Salute','Scadenza'=>'20/10/2020','Oggetto'=>'Scarpe da running','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
+            ['Categoria'=>'Intrattenimento','Scadenza'=>'20/10/2020','Oggetto'=>'supa','Azienda'=>'prova1','Prezzo'=>12,'PercentualeSconto'=>10,'Luogo'=>'prova1','Modalità'=>'prova1'],
         ]);
 
         
