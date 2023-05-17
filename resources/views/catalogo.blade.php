@@ -29,7 +29,7 @@
         <h2>Offerte</h2>
         @foreach($offerte as $offerta)
             <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
-                <img src="img/amazon.png" >
+                <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >
             <div class="container_card">
                 <p>{{$offerta->Oggetto}}</p>
             </div>
