@@ -66,6 +66,7 @@ dots[slideIndex-1].className += " active";
 <br>
 
 <div id="catalogo">
+    
     <h3 class="card_title">Offerte in evidenza</h3>
 
     <a class="card" href="{{route('coupon')}}">

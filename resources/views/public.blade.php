@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cheapest Coupons</title>
-    <link rel="stylesheet" type="text/css" href="css/Public.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/Public.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-5f/8Y+6ZKGlNIZlLg7P/Ko27REjli9/Jk2eWvTbgjMtz1Jnh7u7C0KXQq/8J5RUPK7oy/dkw7cI3P0bYoyDqA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -30,7 +30,7 @@
             <li><a href="{{route('catalogo')}}">Catalogo</a></li>
             <li><a href="{{route('faq')}}">FAQ</a></li>
             <li><a href="{{route('info')}}" >Info</a></li>
-            <li><input type="search" placeholder="Cerca su Cheapest Coupons"> <i class="fa fa-times search-clear"></i> </li> 
+            <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> 
             <li><a href="{{route('login')}}" class="accedi">Accedi</a></li>
             <li><a href="{{route('registrazione')}}" class="registrati">Registrati</a></li>
 
