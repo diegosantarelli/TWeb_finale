@@ -72,12 +72,12 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');
 
 /* Rotta per la vista 'coupon' */
-Route::get('/coupon/{IdOfferta}', [PublicController::class, 'showCoupon']) ->name('coupon');
+Route::get('/coupon/{IdOfferta?}', [PublicController::class, 'showCoupon']) ->name('coupon');
 
 /* Rotta per la vista 'registrati' */
 Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('registrazione');
 
-
+/* Rotta per la barra di ricerca */
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
 

@@ -7,9 +7,6 @@
 <section id="faq_section">
         <h2 class="titolo">DOMANDE FREQUENTI</h2>
         <br>
-       <!-- <p id="paragrafo">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor rutrum nisl eu facilisis. Vestibulum feugiat pretium nibh, vitae accumsan dolor varius id.
-        </p>-->
         <details>
                 <summary>
                 Vestibulum eget?

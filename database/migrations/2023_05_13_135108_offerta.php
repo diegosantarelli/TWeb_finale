@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('Offerte', function (Blueprint $table) {
             $table->bigIncrements('IdOfferta');
-            $table->string('Categoria',25);
+            $table->string('DescrizioneOfferta',50);
+            $table->string('Categoria',50);
             $table->string('Scadenza',25);
-            $table->string('Oggetto',25);
-            $table->string('Azienda',25);
+            $table->string('Oggetto',100);
+            $table->string('Azienda',50);
             $table->float('Prezzo')->unsigned();
+            $table->float('PrezzoScontato')->unsigned();
             $table->tinyInteger('PercentualeSconto')->unsigned();
-            $table->string('Luogo',25);
-            $table->string('Modalità',25);
+            $table->string('Luogo',50);
+            $table->string('Modalità',50);
+            $table->string('Evidenza',10);
         });
     }
 

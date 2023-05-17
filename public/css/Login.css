@@ -79,7 +79,6 @@ STILE LOGIN CONTAINER
  }
 
  .login-container .content .link-register {
-    
     display: flex;
     justify-content: center ;
     text-align: center;
@@ -94,7 +93,6 @@ STILE LOGIN CONTAINER
 
 .login-container .content .link-register .link-register-right:hover {
   text-decoration: underline;
-
 }
 ------------------------------------- */
 

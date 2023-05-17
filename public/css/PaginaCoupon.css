@@ -29,24 +29,23 @@
     margin-bottom: 20px;
   }
 
-  .product-info p.prezzo_originale {
+  .prezzo_originale {
     text-decoration: line-through;
-    font-size: 12px;
+    font-size: 20px;
     color: red;
     margin-bottom: 2px;
   }
 
-  .product .product-image {
+  .product-image {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   
-  .product-info p.prezzo_scontato {
+  .prezzo_scontato {
     font-style: bold;
     color: green;
   }
   
-
-  .product-info button {
+  .button {
     height: 50px;
     width: 180px;
     display: flex;
@@ -62,6 +61,6 @@
     font-size: 15px;
   }
   
-  .product-info button:hover {
+  .button:hover {
     background-color: rgb(70, 150, 128);
   }

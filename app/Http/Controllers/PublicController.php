@@ -13,9 +13,12 @@ class PublicController extends Controller
     /**
      * Show the homepage for a public user.
      */
-    public function showHome(): View {
-        return view('home');
+    public function showHome(): View
+    {
+        $offerteInEvidenza = Offerta::where('Evidenza', 'sì')->get();
+        return view('home', ['offerte' => $offerteInEvidenza]);
     }
+    
     /**
      * Show catalog page for a public user.
      */
@@ -72,17 +75,12 @@ class PublicController extends Controller
         $selOfferta = Offerta::all()->where('IdOfferta', $IdOfferta)->first();
         
         return view('coupon')->with('selOfferta',$selOfferta);
-        
-        
     }
 
     public function showSignIn(): View {
         return view('registrazione');
     }
 
-    public function showCoupon1(): View {
-        return view('coupon');
-    }
 
     public function search(Request $request)
     {

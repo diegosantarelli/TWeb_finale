@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.navadmin')
 
 @section('title', 'Area Admin')
 
@@ -6,7 +6,7 @@
 <div class="static">
     <h3>Area Amministratore</h3>
     <p>Benvenuto {{ Auth::user()->name }} {{ Auth::user()->surname }}</p>
-    <p>Seleziona la funzione da attivare</p>
+    <p>Scegli sulla navbar la funzione da attivare</p>
 </div>
 @endsection
 
