@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('Offerte', function (Blueprint $table) {
             $table->bigIncrements('IdOfferta');
             $table->string('Categoria',25);
-            $table->date('Scadenza',25);
+            $table->string('Scadenza',25);
             $table->string('Oggetto',25);
             $table->string('Azienda',25);
             $table->float('Prezzo')->unsigned();

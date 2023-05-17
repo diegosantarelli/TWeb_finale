@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Azienda extends Model
 {
-    protected $table = 'azienda';
-    protected $primaryKey = 'Nome';
+    protected $table = 'Aziende';
+    
     
     // prodId non modificabile da un HTTP Request (Mass Assignment)
     protected $guarded = ['Nome'];
