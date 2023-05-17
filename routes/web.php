@@ -80,5 +80,8 @@ Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('re
 /* Rotta per la barra di ricerca */
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
+Route::get('/catalog', [PublicController::class, 'search'])->name('catalog');
+Route::get('/catalog/search', [PublicController::class, 'search'])->name('catalog.search');
+
 
 require __DIR__.'/auth.php';

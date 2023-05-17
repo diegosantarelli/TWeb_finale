@@ -81,29 +81,25 @@ class PublicController extends Controller
         return view('registrazione');
     }
 
-
-    /*
-    public function search(Request $request)
-    {
-        $keyword = $request->input('keyword');
-
-        $results = Offerta::where('Oggetto', 'like', '%' . $keyword . '%')->get();
-
-        $categorie = Offerta::all()->pluck('Categoria')->unique();  
-        
-        return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
-    }
-    */
-    /*
     public function search(Request $request)
     {
         $query = $request->input('query');
-    
-        $results = Offerta::where('Categoria', 'like', '%'.$query.'%')
-                        ->orWhere('Oggetto', 'like', '%'.$query.'%')
-                        ->get();
-    
-        return view('catalogo', ['results' => $results]);
+        $keyword = $request->input('keyword');
+        
+        $offerte = Offerta::query();
+        
+        if ($query) {
+            $offerte->where('Oggetto', 'LIKE', "%$query%");
+        }
+        
+        if ($keyword) {
+            $offerte->where('Azienda', 'LIKE', "%$keyword%");
+        }
+        
+        $results = $offerte->get();
+        
+        return view('catalogo', ['offerte' => $results]);
     }
-    */
+    
+  
 }
