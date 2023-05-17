@@ -23,6 +23,7 @@
     <div id="catalogo">
         <h2>Offerte</h2>
         @foreach($offerte as $offerta)
+        
         <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
         <img src="img/amazon.png" >
     
@@ -37,5 +38,8 @@
         </div>
 
     </div>
+
+    
+
 
  @endsection
