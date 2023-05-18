@@ -42,6 +42,48 @@ class DatabaseSeeder extends Seeder
             ['Categoria'=>'Intrattenimento','DescrizioneOfferta'=> '...','Scadenza'=>'20/10/2020','Oggetto'=>'Proiettore 4k','Azienda'=>'Angelini','Prezzo'=>1230,'PercentualeSconto'=>'60','Luogo'=>'Evento','Modalità'=>'Utilizzo online', 'PrezzoScontato'=>100, 'Evidenza'=>'sì'],
         ]);
 
+        DB::table('Users')->insert([
+            [
+                'Cognome' => 'Recinelli',
+                'Email' => 's@gmail.com',
+                'Età' => 22,
+                'Genere' => 'Uomo',
+                'Livello' => 1,
+                'Nome' => 'Simone',
+                'password' => '14',
+                'Possibilità_abbinamento' => 0,
+                'Residenza' => 'Roseto',
+                'Telefono' => '3409139863',
+                'username' => 'Simone'
+            ],
+            [
+                'Cognome' => 'Staff',
+                'Email' => 'membro@gmail.com',
+                'Età' => 32,
+                'Genere' => 'Uomo',
+                'Livello' => 2,
+                'Nome' => 'Membro',
+                'password' => '14',
+                'Possibilità_abbinamento' => 1,
+                'Residenza' => 'Martinsicuro',
+                'Telefono' => '3758492345',
+                'username' => 'MembroStaff'
+            ],
+            [
+                'Cognome' => 'Admin',
+                'Email' => 'admin@gmail.com',
+                'Età' => 42,
+                'Genere' => 'Uomo',
+                'Livello' => 3,
+                'Nome' => 'Admin',
+                'password' => '14',
+                'Possibilità_abbinamento' => 0,
+                'Residenza' => 'Ancona',
+                'Telefono' => '3409139863',
+                'username' => 'Admin'
+            ]
+        ]);
         
+   
     }
 }

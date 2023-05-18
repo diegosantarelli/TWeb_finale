@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\Authenticate;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +71,9 @@ Route::get('/faq', [PublicController::class, 'showFaq']) ->name('faq');
 Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 
 /* Rotta per la vista 'login' */
-Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');
+/*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
+Route::get('/login', [App\Http\Controllers\Auth\PublicController::class, 'showLogin'])->name('login');
+
 
 /* Rotta per la vista 'coupon' */
 Route::get('/coupon/{IdOfferta?}', [PublicController::class, 'showCoupon']) ->name('coupon');
@@ -80,12 +84,13 @@ Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('re
 /* Rotta per la barra di ricerca */
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
+/* Rotta che protegge altre rotte quando l'utente non è autenticato*/
+Route::middleware([Authenticate::class, 'auth'])->group(function () {
+        // Rotte protette dall'autenticazione
+        // mettere rotta che ti collega alla pagina del coupon da stampare 
 
-
-
-/*
-Route::get('/catalog', [PublicController::class, 'search'])->name('catalog');
-Route::get('/catalog/search', [PublicController::class, 'search'])->name('catalog.search');*/
+    });
+    
 
 
 require __DIR__.'/auth.php';
