@@ -80,6 +80,8 @@ Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('re
 /* Rotta per la barra di ricerca */
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
+/* Rotta per la vista 'stampacoupon' */
+Route::get('/qrcode', [PublicController::class, 'generateQrCode']) ->name('stampacopuon');
 
 
 
