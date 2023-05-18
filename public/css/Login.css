@@ -1,8 +1,5 @@
-/* ----------------------------------
-STILE LOGIN CONTAINER
 
-
-.static{
+.login-container{
     width: 400px;
     background-color: #fff;
     border-radius: 5px;
@@ -11,6 +8,7 @@ STILE LOGIN CONTAINER
     margin: 100px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
  }
+
  .login-container h1{
    text-align: center;
    margin-bottom: 20px;
@@ -24,7 +22,7 @@ STILE LOGIN CONTAINER
    margin-bottom: 15px;
  }
 
- form .input-box span.details{
+ form .input-box .label-input{
    display: block;
    margin-bottom: 5px;
    font-weight: bold;
@@ -39,8 +37,7 @@ STILE LOGIN CONTAINER
    border: 1px solid #ccc;
    transition: all 0.3s ease;
  }
- .user-details .input-box input:focus,
- .user-details .input-box input:valid{
+ .user-details .input-box input:focus{
    border:2px solid rgb(88,185,157);
  }
   form .gender-details .gender-title{
@@ -94,10 +91,20 @@ STILE LOGIN CONTAINER
 .login-container .content .link-register .link-register-right:hover {
   text-decoration: underline;
 }
-------------------------------------- */
+
+/**css messaggio di errore*/
+.errors {
+  color: red;
+  margin-bottom: 5px;
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  padding-left: 15px;
+}
 
 
 
+/**
 .static {
   width: 400px;
   background-color: #fff;
@@ -123,7 +130,6 @@ STILE LOGIN CONTAINER
   font-weight: bold;
 }
 
-/**css sezioni da compilare del form*/
 .input {
   width: 100%;
   padding: 10px;
@@ -144,7 +150,6 @@ STILE LOGIN CONTAINER
 }
 
 
-/**css messaggio di errore*/
 .errors {
   color: red;
   margin-bottom: 5px;
@@ -152,7 +157,6 @@ STILE LOGIN CONTAINER
   padding: 0;
 }
 
-/**css bottone del form*/
 .container-form-btn {
   margin: 25px 0;
   
@@ -173,7 +177,6 @@ STILE LOGIN CONTAINER
   background-color:rgb(70, 150, 128);
 }
 
-/**css scritta registrati*/
 .static p {
   font-size: 15px;
   text-align: center;
@@ -189,3 +192,4 @@ STILE LOGIN CONTAINER
 .wrap-input p a:hover{
   text-decoration: underline;
 }
+*/
