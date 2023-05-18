@@ -72,7 +72,7 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 
 /* Rotta per la vista 'login' */
 /*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
-Route::post('/login', [App\Http\Controllers\Auth\PublicController::class, 'showLogin'])->name('login');
+Route::post('/login', [PublicController::class, 'showLogin'])->name('login');
 
 
 /* Rotta per la vista 'coupon' */
