@@ -168,6 +168,22 @@
                 {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm', 'placeholder' => 'Conferma password']) }}
           </div>
 
+
+          <div class="input-box">
+          {{ Form::label('phone', 'Telefono', ['class' => 'label-input']) }}
+                {{ Form::text('phone', '', ['class' => 'input', 'id' => 'phone', 'placeholder' => 'Inserisci il tuo numero di telefono']) }}
+                @if ($errors->first('phone'))
+                <ul class="errors">
+                    @foreach ($errors->get('phone') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+</div>
+
+
+ 
+
          
         </div>
 
@@ -178,7 +194,7 @@
       </form>
 
       {{ Form::close() }}
-      
+
       <div class="link-login">
         <a class="link-login-left"> Hai già un'account? </a>
         <a class="link-login-right" href="{{route('login')}}"> Accedi </a>
