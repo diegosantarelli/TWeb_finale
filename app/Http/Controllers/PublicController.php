@@ -137,7 +137,7 @@ class PublicController extends Controller
         return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
         
     }
-/* AMMINISTRATORE*/
+/* FAQ-------------------------------------------------------------------------------------------------*/
     public function insertfaq(){
         
         return view('insertfaq');
@@ -149,10 +149,16 @@ class PublicController extends Controller
     public function storefaq(Request $request){
         
         $faq = new Faq;
-        $faq->Domanda = $request->input('Domanda');
+        if (isset($request->Domanda)&&isset($request->Risposta)){
+            $faq->Domanda = $request->input('Domanda');
         $faq->Risposta = $request->input('Risposta');
         $faq->save();
         return redirect('faq');
+        }
+        else{
+            return redirect('faq');
+        }
+        
 
     }
 
@@ -184,7 +190,7 @@ class PublicController extends Controller
         return redirect('faq');
         
     }
-/* fine parte AMMINISTRATORE*/
+/* FAQ-------------------------------------------------------------------------------------------------*/
 
     public function showStampaCoupon(): View{
         return view('stampacoupon');
