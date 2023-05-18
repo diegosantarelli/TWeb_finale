@@ -7,23 +7,26 @@
 <section id="faq_section">
         <h2 class="titolo">DOMANDE FREQUENTI</h2>
         <br>
+        
         @foreach($faqs as $faq)
+        <form method="GET" action="{{route('updatefaq', [$faq->id])}}">
+        @csrf
+        @method('GET')
         <details>
                 <summary>
-                {{$faq->Domanda}}
+                {{$faq->Domanda}} 
+
                 </summary>
                 <p>
-                {{$faq->Risposta}}
+                {{$faq->Risposta}} 
                 </p>
+                
         </details>
+        
+  
+  <button type="submit" >Modifica la domanda</button>
+</form>
         @endforeach
         
 </section>
-
-<a href="{{route('insertfaq')}}">inserisci una faq</a>
-<a href="{{route('deletefaq')}}">elimina una faq</a>
-<a href="{{route('modificafaq')}}">modifica una faq</a>
-    
 @endsection
-
-

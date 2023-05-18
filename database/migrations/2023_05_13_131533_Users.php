@@ -16,16 +16,16 @@ return new class extends Migration
     {
         Schema::create('Users', function (Blueprint $table) {
             $table->string('username',25)->primary();
-            $table->string('password',25);
-            $table->string('Email',25);
-            $table->string('Nome',25);
-            $table->string('Cognome',25);
-            $table->string('Telefono',25);
-            $table->tinyInteger('Possibilità_abbinamento', false, true);
-            $table->tinyInteger('Livello')->unsigned();
-            $table->string('Genere',25);
-            $table->integer('Età')->unsigned()->limit(3);
-            $table->string('Residenza',25);
+            $table->string('password',255)->nullable();
+            $table->string('email',25);
+            $table->string('nome',25);
+            $table->string('cognome',25);
+            $table->string('telefono',25);
+            $table->tinyInteger('possibilità_abbinamento', false, true);
+            $table->tinyInteger('livello')->unsigned();
+            $table->string('genere',25);
+            $table->integer('età')->unsigned()->limit(3);
+            $table->string('residenza',25);
         });
     }
     
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Utenti');
+        Schema::dropIfExists('Users');
     }
 };

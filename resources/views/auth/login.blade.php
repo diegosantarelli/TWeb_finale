@@ -1,7 +1,5 @@
 @extends('public')
 
-@section('title', 'Registrazione')
-
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{asset('css/Login.css')}}">
 
