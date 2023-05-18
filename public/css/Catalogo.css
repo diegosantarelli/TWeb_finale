@@ -83,12 +83,15 @@ h2 {
   background-color: #24262b;
   width: 14em;
   float: left;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
   padding: 1em 0.5em;
   margin-left:-15em;
-  min-height: 500px;
+  min-height: 400px;
   max-height: 900px;
   color: white;
-  margin-top: -130px;
+  margin-top: -77px;
 }
 
 #opt{
