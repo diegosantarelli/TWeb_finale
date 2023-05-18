@@ -1,4 +1,4 @@
-/* ----------------------------
+
 .signup-container{
    width: 60% ;
     background-color: #fff;
@@ -8,6 +8,7 @@
     margin: 100px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .signup-container h1{
   text-align: center;
   margin-bottom: 20px;
@@ -19,11 +20,12 @@
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
+
 form .user-details .input-box{
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
-form .input-box span.details{
+form .input-box .label-input{
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
@@ -37,8 +39,7 @@ form .input-box span.details{
   border: 1px solid #ccc;
   transition: all 0.3s ease;
 }
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:focus{
   border: 2px solid rgb(88,185,157);
 }
  form .gender-details .gender-title{
@@ -55,6 +56,7 @@ form .input-box span.details{
    align-items: center;
    cursor: pointer;
  }
+ /**
  form .category label .dot{
   height: 18px;
   width: 18px;
@@ -72,7 +74,7 @@ form .input-box span.details{
  }
  form input[type="radio"]{
    display: none;
- }
+ }*/
  form .button{
    height: 45px;
    margin: 35px 0
@@ -111,62 +113,12 @@ form .input-box span.details{
   text-decoration: underline;
 }
 
-------------------- */
-
-/* Registrazione.css */
-
-.static {
-  margin: 20px;
-  padding: 20px;
-  background-color: #f2f2f2;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.container-contact {
-  margin-top: 20px;
-}
-
-.wrap-input {
-  margin-bottom: 20px;
-}
-
-.label-input {
-  font-weight: bold;
-}
-
-.input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
+/**css messaggio di errore*/
 .errors {
   color: red;
-  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  padding-left: 15px;
 }
-
-.form-btn1 {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.form-btn1:hover {
-  background-color: #45a049;
-}
-
