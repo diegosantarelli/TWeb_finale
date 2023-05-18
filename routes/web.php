@@ -74,6 +74,8 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 /*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
 Route::post('/login', [PublicController::class, 'showLogin'])->name('login');
 
+Route::post('/logout', 'App\Http\Controllers\Auth\AuthenticatedSessionController@destroy')->name('logout');
+
 
 /* Rotta per la vista 'coupon' */
 Route::get('/coupon/{IdOfferta?}', [PublicController::class, 'showCoupon']) ->name('coupon');

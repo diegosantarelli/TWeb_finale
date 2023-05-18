@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
                 'possibilità_abbinamento' => 0,
                 'residenza' => 'Roseto',
                 'telefono' => '3409139863',
-                'username' => 'simone'
+                'username' => 'simone',
             ],
             [
                 'cognome' => 'Staff',

@@ -163,6 +163,8 @@
                 @endif
           </div>
 
+          
+
           <div class="input-box">  
           {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
                 {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm', 'placeholder' => 'Conferma password']) }}
@@ -179,13 +181,49 @@
                     @endforeach
                 </ul>
                 @endif
+          </div>
+
+          <div class="input-box">
+          {{ Form::label('residenza', 'Residenza', ['class' => 'label-input']) }}
+                {{ Form::text('residenza', '', ['class' => 'input', 'placeholder'=>'Inserisci la tua residenza']) }}
+          </div>
+
+          <div class="input-box">
+          {{ Form::label('età', 'Età',  ['class' => 'label-input'])}}
+               {{ Form::number('età', '', ['class' => 'input', 'placeholder' => 'Inserisci la tua età']) }}
+          </div>
+
+          <div class="input-radio-button">
+          {{ Form::label('gender', 'Genere', ['class' => 'label-input']) }}
+          <div class="radio-buttons">
+          {{ Form::radio('gender', 'male', false, ['id' => 'male']) }}
+                {{ Form::label('male', 'Maschio') }}
+        
+          {{ Form::radio('gender', 'female', false, ['id' => 'female']) }}
+                {{ Form::label('female', 'Femmina') }}
+        
+          {{ Form::radio('gender', 'other', false, ['id' => 'other']) }}
+                {{ Form::label('other', 'Altro') }}
+          </div> 
+
+               @if ($errors->first('gender'))
+              <ul class="errors">
+                  @foreach ($errors->get('gender') as $message)
+                 <li>{{ $message }}</li>
+                 @endforeach
+              </ul>
+              @endif
+         
+       
+
 </div>
 
 
- 
 
-         
-        </div>
+
+</div>
+
+
 
         <div class="button">
         {{ Form::submit('Registrati', ['class' => 'form-btn1']) }}

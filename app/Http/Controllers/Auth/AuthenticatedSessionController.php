@@ -104,8 +104,8 @@ public function store(Request $request) {
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Request $request) {
-        Auth::guard('web')->logout();
-
+        //Auth::guard('web')->logout();
+        Auth::logout();
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
