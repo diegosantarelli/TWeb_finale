@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Offerta;
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use QrCode;
  
 class PublicController extends Controller
 {
@@ -184,5 +185,16 @@ class PublicController extends Controller
         
     }
 /* fine parte AMMINISTRATORE*/
-  
+
+    public function showStampaCoupon(): View{
+        return view('stampacoupon');
+    }
+
+    public function generateQrCode()
+    {
+        $data = "Dati da codificare nel codice QR";
+        $qrCode = QrCode::size(300)->generate($data);
+
+        return view('stampacoupon', compact('qrCode'));
+    }
 }

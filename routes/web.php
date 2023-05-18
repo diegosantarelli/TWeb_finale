@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\Authenticate;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +71,9 @@ Route::get('/faq', [PublicController::class, 'showFaq']) ->name('faq');
 Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 
 /* Rotta per la vista 'login' */
-Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');
+/*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
+Route::post('/login', [App\Http\Controllers\Auth\PublicController::class, 'showLogin'])->name('login');
+
 
 /* Rotta per la vista 'coupon' */
 Route::get('/coupon/{IdOfferta?}', [PublicController::class, 'showCoupon']) ->name('coupon');
@@ -91,13 +95,33 @@ Route::delete('/destroyfaq/{id}', [PublicController::class, 'destroyfaq'])->name
 Route::get('/modificafaq', [PublicController::class, 'modificafaq'])->name('modificafaq');
 
 Route::get('/updatefaq/{id}', [PublicController::class, 'updatefaq'])->name('updatefaq');
+/* Rotta che protegge altre rotte quando l'utente non è autenticato*/
+Route::middleware([Authenticate::class, 'auth'])->group(function () {
+        // Rotte protette dall'autenticazione
+        // mettere rotta che ti collega alla pagina del coupon da stampare 
 
+    });
+    
 Route::put('/modifyfaq/{id}', [PublicController::class, 'modifyfaq'])->name('modifyfaq');
 
 
-/*
-Route::get('/catalog', [PublicController::class, 'search'])->name('catalog');
-Route::get('/catalog/search', [PublicController::class, 'search'])->name('catalog.search');*/
-
-
 require __DIR__.'/auth.php';
+
+/*
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+Route::post('/login', function (Request $request) {
+    $credentials = $request->only('username', 'password');
+
+    if (Auth::attempt($credentials)) {
+        // L'utente è autenticato
+        return redirect()->intended('/');
+    } else {
+        // Le credenziali non sono corrette
+        return back()->withErrors([
+            'username' => 'Credenziali non valide',
+        ]);
+    }
+})->name('login');
+*/

@@ -1,19 +1,14 @@
 @extends('public')
 
-@section('title', 'Registrazione')
-
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{asset('css/Login.css')}}">
 <div class="static">
-    <h3>Login</h3>
+    <h1>Accedi</h1>
     
     <div class="container-contact">
         <div class="wrap-contact1">
             {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
-            
-             <div  class="wrap-input">
-                 <p> Se non hai già un account <a  href="{{ route('register') }}">registrati</a></p>
-             </div>            
+             
              <div  class="wrap-input">
                 {{ Form::label('username', 'Nome Utente', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'input','id' => 'username' , 'placeholder' => 'Inserisci il tuo username']) }}
@@ -39,8 +34,12 @@
             </div>
             
             <div class="container-form-btn">                
-                {{ Form::submit('Login', ['class' => 'form-btn1']) }}
+                {{ Form::submit('Accedi', ['class' => 'form-btn1']) }}
             </div>
+
+            <div  class="wrap-input">
+                 <p> Non hai un account? <a  href="{{ route('register') }}">Registrati</a></p>
+             </div>            
             
             {{ Form::close() }}
         </div>
