@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
 }
-
+  
 .search-bar {
   display: grid;
   grid-template-columns: 40% 40% 20%;
