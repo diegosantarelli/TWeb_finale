@@ -35,8 +35,8 @@ class RegisteredUserController extends Controller
     {
         
         $request->validate([
-            'nome' => ['required', 'string', 'max:255'],
-            'cognome' => ['required', 'string', 'max:255'],
+            'nome' => ['required', 'string','min:2', 'max:50' ],
+            'cognome' => ['required', 'string','min:2','max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
             'livello' => ['required', 'integer', 'min:1', 'max:3'],
             'possibilità_abbinamento' => ['required', 'boolean'],
             'residenza' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'numeric', 'digits_between:1,15'],
             'età' => ['required', 'integer', 'min:1', 'max:100'],
         ]);
 
