@@ -5,7 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
-
+use App\Http\Controllers\AmministratoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +74,8 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 /*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
 Route::post('/login', [PublicController::class, 'showLogin'])->name('login');
 
+Route::post('/logout', 'App\Http\Controllers\Auth\AuthenticatedSessionController@destroy')->name('logout');
+
 
 /* Rotta per la vista 'coupon' */
 Route::get('/coupon/{IdOfferta?}', [PublicController::class, 'showCoupon']) ->name('coupon');
@@ -84,6 +86,9 @@ Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('re
 /* Rotta per la barra di ricerca */
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
+
+
+/*CUD Faq----------------------------------------------------------------------------------------------------------------*/
 Route::get('/insertfaq', [PublicController::class, 'insertfaq'])->name('insertfaq');
 
 Route::post('/storefaq', [PublicController::class, 'storefaq'])->name('storefaq');
@@ -95,14 +100,40 @@ Route::delete('/destroyfaq/{id}', [PublicController::class, 'destroyfaq'])->name
 Route::get('/modificafaq', [PublicController::class, 'modificafaq'])->name('modificafaq');
 
 Route::get('/updatefaq/{id}', [PublicController::class, 'updatefaq'])->name('updatefaq');
+
+Route::put('/modifyfaq/{id}', [PublicController::class, 'modifyfaq'])->name('modifyfaq');
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*CUD Azienda----------------------------------------------------------------------------------------------------------------*/
+Route::get('/insertazienda', [AmministratoreController::class, 'insertazienda'])->name('insertazienda');
+
+Route::post('/storeazienda', [AmministratoreController::class, 'storeazienda'])->name('storeazienda');
+
+Route::get('/deleteazienda', [AmministratoreController::class, 'deleteazienda'])->name('deleteazienda');
+
+Route::delete('/destroyazienda/{id}', [AmministratoreController::class, 'destroyazienda'])->name('destroyazienda');
+
+Route::get('/modificaazienda', [AmministratoreController::class, 'modificaazienda'])->name('modificaazienda');
+
+Route::get('/updateazienda/{id}', [AmministratoreController::class, 'updateazienda'])->name('updateazienda');
+
+Route::put('/modifyazienda/{id}', [AmministratoreController::class, 'modifyazienda'])->name('modifyazienda');
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+
+
 /* Rotta che protegge altre rotte quando l'utente non è autenticato*/
+
 Route::middleware([Authenticate::class, 'auth'])->group(function () {
         // Rotte protette dall'autenticazione
         // mettere rotta che ti collega alla pagina del coupon da stampare 
 
     });
     
-Route::put('/modifyfaq/{id}', [PublicController::class, 'modifyfaq'])->name('modifyfaq');
+
+
+Route::get('amministratore', [AmministratoreController::class, 'homeadmin'])->name('amministratore');
 
 
 require __DIR__.'/auth.php';
