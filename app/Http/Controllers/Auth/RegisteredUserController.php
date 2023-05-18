@@ -33,22 +33,36 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
+            'nome' => ['required', 'string', 'max:255'],
+            'cognome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'genere' => ['required', 'string', 'max:255'],
+            'livello' => ['required', 'integer', 'min:1', 'max:3'],
+            'possibilità_abbinamento' => ['required', 'boolean'],
+            'residenza' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255'],
+            'età' => ['required', 'integer', 'min:1', 'max:100'],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
+            'nome' => $request->input('nome'),
+            'cognome' => $request->input('cognome'),
+            'email' => $request->input('email'),
+            'username' => $request->input('username'),
+            'password' => Hash::make($request->input('password')),
+            'genere' => $request->input('nome'),
+            'livello' => $request->input('nome'),
+            'possibilità_abbinamento' => $request->input('possibilità_abbinamento'),
+            'residenza' => $request->input('residenza'),
+            'telefono' => $request->input('telefono'),
+            'età' => $request->input('età'),
         ]);
-
+        
+           
         event(new Registered($user));
 
         Auth::login($user);

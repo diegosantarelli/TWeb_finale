@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 
@@ -44,46 +44,52 @@ class DatabaseSeeder extends Seeder
 
         DB::table('Users')->insert([
             [
-                'Cognome' => 'Recinelli',
-                'Email' => 's@gmail.com',
-                'Età' => 22,
-                'Genere' => 'Uomo',
-                'Livello' => 1,
-                'Nome' => 'Simone',
-                'password' => '14',
-                'Possibilità_abbinamento' => 0,
-                'Residenza' => 'Roseto',
-                'Telefono' => '3409139863',
-                'username' => 'Simone'
+                'cognome' => 'Recinelli',
+                'email' => 's@gmail.com',
+                'età' => 22,
+                'genere' => 'Uomo',
+                'livello' => 1,
+                'nome' => 'Simone',
+                'password' => Hash::make('14'),
+                'possibilità_abbinamento' => 0,
+                'residenza' => 'Roseto',
+                'telefono' => '3409139863',
+                'username' => 'simone'
             ],
             [
-                'Cognome' => 'Staff',
-                'Email' => 'membro@gmail.com',
-                'Età' => 32,
-                'Genere' => 'Uomo',
-                'Livello' => 2,
-                'Nome' => 'Membro',
-                'password' => '14',
-                'Possibilità_abbinamento' => 1,
-                'Residenza' => 'Martinsicuro',
-                'Telefono' => '3758492345',
-                'username' => 'MembroStaff'
+                'cognome' => 'Staff',
+                'email' => 'membro@gmail.com',
+                'età' => 32,
+                'genere' => 'Uomo',
+                'livello' => 2,
+                'nome' => 'Membro',
+                'password' => Hash::make('14'),
+                'possibilità_abbinamento' => 1,
+                'residenza' => 'Martinsicuro',
+                'telefono' => '3758492345',
+                'username' => 'membrostaff'
             ],
             [
-                'Cognome' => 'Admin',
-                'Email' => 'admin@gmail.com',
-                'Età' => 42,
-                'Genere' => 'Uomo',
-                'Livello' => 3,
-                'Nome' => 'Admin',
-                'password' => '14',
-                'Possibilità_abbinamento' => 0,
-                'Residenza' => 'Ancona',
-                'Telefono' => '3409139863',
-                'username' => 'Admin'
+                'cognome' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'età' => 42,
+                'genere' => 'Uomo',
+                'livello' => 3,
+                'nome' => 'Admin',
+                'password' => Hash::make('14'),
+                'possibilità_abbinamento' => 0,
+                'residenza' => 'Ancona',
+                'telefono' => '3409139863',
+                'username' => 'admin'
             ]
         ]);
-        
+
+    /* 
+            User::create([
+            'name' => 'Simone',
+            'password' => Hash::make('password'),
+        ]);
+    */       
    
     }
 }

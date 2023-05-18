@@ -72,7 +72,7 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 
 /* Rotta per la vista 'login' */
 /*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
-Route::get('/login', [App\Http\Controllers\Auth\PublicController::class, 'showLogin'])->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\PublicController::class, 'showLogin'])->name('login');
 
 
 /* Rotta per la vista 'coupon' */
@@ -94,3 +94,22 @@ Route::middleware([Authenticate::class, 'auth'])->group(function () {
 
 
 require __DIR__.'/auth.php';
+
+/*
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+Route::post('/login', function (Request $request) {
+    $credentials = $request->only('username', 'password');
+
+    if (Auth::attempt($credentials)) {
+        // L'utente è autenticato
+        return redirect()->intended('/');
+    } else {
+        // Le credenziali non sono corrette
+        return back()->withErrors([
+            'username' => 'Credenziali non valide',
+        ]);
+    }
+})->name('login');
+*/
