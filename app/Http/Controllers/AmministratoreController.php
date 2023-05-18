@@ -9,11 +9,25 @@ use App\Models\Azienda;
 class AmministratoreController extends Controller
 {
     public function homeadmin(){
-        return view('homeadmin');
+        $aziende = Azienda::all();
+        return view('homeadmin')->with('aziende',$aziende);
     }
 
     public function insertazienda(){
-        $aziende = Azienda::all();
-        return view('insertazienda')->with('aziende',$aziende);
+        return view('insertazienda');
+    }
+
+    public function storeazienda(Request $request){
+        $azienda = new Azienda;
+        //bisogna controllare tramite form che tutti i campi siano inseriti
+        
+        $azienda->Nome=$request->input('Nome');
+        $azienda->Sede=$request->input('Sede');
+        $azienda->Tipologia=$request->input('Tipologia');
+        $azienda->RagioneSociale=$request->input('RagioneSociale');
+        $azienda->save();
+        
+        return redirect('amministratore');
+        
     }
 }
