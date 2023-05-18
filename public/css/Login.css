@@ -2,7 +2,7 @@
 STILE LOGIN CONTAINER
 
 
-.login-container{
+.static{
     width: 400px;
     background-color: #fff;
     border-radius: 5px;
@@ -96,63 +96,95 @@ STILE LOGIN CONTAINER
 }
 ------------------------------------- */
 
+
+
 .static {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  display: block;
+  margin: 100px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.static h1 {
   text-align: center;
-}
-
-.static h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.static p {
   margin-bottom: 20px;
 }
 
 .container-contact {
   display: flex;
   justify-content: center;
+  margin:20px 0 12px 0;
 }
 
-.wrap-contact1 {
-  width: 400px;
-  padding: 40px 30px;
-  background-color: #f6f6f6;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.label-input {
+.static .label-input {
   font-weight: bold;
 }
 
+/**css sezioni da compilare del form*/
 .input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin: 10px 0px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline: none;
+  height: 35px;
+   padding-left: 15px;
+   transition: all 0.3s ease;
+   font-size: 13px;
 }
 
+
+
+.input:focus{
+  border:2px solid rgb(88,185,157);
+}
+
+
+/**css messaggio di errore*/
 .errors {
   color: red;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   list-style: none;
   padding: 0;
 }
 
+/**css bottone del form*/
+.container-form-btn {
+  margin: 25px 0;
+  
+}
 .form-btn1 {
-  width: 100%;
-  padding: 10px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #4caf50;
+  background-color: rgb(88,185,157);
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: 16px;
   cursor: pointer;
+  display: block;
+  margin: 5px auto 12px auto;
 }
 
 .form-btn1:hover {
-  background-color: #45a049;
+  background-color:rgb(70, 150, 128);
 }
 
+/**css scritta registrati*/
+.static p {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.wrap-input p a{
+  cursor: pointer;
+  color: rgb(88,185,157);
+  text-decoration: none;
+}
+
+.wrap-input p a:hover{
+  text-decoration: underline;
+}
