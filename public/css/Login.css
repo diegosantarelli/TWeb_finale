@@ -175,8 +175,9 @@ STILE LOGIN CONTAINER
 
 /**css scritta registrati*/
 .static p {
+  font-size: 15px;
   text-align: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
 .wrap-input p a{
