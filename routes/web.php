@@ -80,7 +80,19 @@ Route::get('/registrazione', [PublicController::class, 'showSignIn']) ->name('re
 /* Rotta per la barra di ricerca */
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
+Route::get('/insertfaq', [PublicController::class, 'insertfaq'])->name('insertfaq');
 
+Route::post('/storefaq', [PublicController::class, 'storefaq'])->name('storefaq');
+
+Route::get('/deletefaq', [PublicController::class, 'deletefaq'])->name('deletefaq');
+
+Route::delete('/destroyfaq/{id}', [PublicController::class, 'destroyfaq'])->name('destroyfaq');
+
+Route::get('/modificafaq', [PublicController::class, 'modificafaq'])->name('modificafaq');
+
+Route::get('/updatefaq/{id}', [PublicController::class, 'updatefaq'])->name('updatefaq');
+
+Route::put('/modifyfaq/{id}', [PublicController::class, 'modifyfaq'])->name('modifyfaq');
 
 
 /*

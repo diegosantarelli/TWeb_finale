@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
 use App\Models\Offerta;
+use App\Models\Faq;
 use Illuminate\Http\Request;
  
 class PublicController extends Controller
@@ -60,7 +61,8 @@ class PublicController extends Controller
      * Show faq page for a public user.
      */
     public function showFaq(): View {
-        return view('faq');
+        $faqs=Faq::all();
+        return view('faq')->with('faqs',$faqs);
     }
     /**
      * Show info page for a public user.
@@ -134,5 +136,53 @@ class PublicController extends Controller
         return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
         
     }
+/* AMMINISTRATORE*/
+    public function insertfaq(){
+        
+        return view('insertfaq');
+        
+
+    }
+
+
+    public function storefaq(Request $request){
+        
+        $faq = new Faq;
+        $faq->Domanda = $request->input('Domanda');
+        $faq->Risposta = $request->input('Risposta');
+        $faq->save();
+        return redirect('faq');
+
+    }
+
+    public function deletefaq(){
+        $faqs = Faq::all();
+        return view('deletefaq')->with('faqs',$faqs);
+    }
+
+    public function destroyfaq($id){
+        Faq::destroy($id);
+        return redirect('faq');
+
+    }
+
+    public function modificafaq(){
+        $faqs = Faq::all();
+        return view('modificafaq')->with('faqs',$faqs);
+    }
+
+    public function updatefaq($id){
+        $faq=Faq::all()->where('id',$id)->first();
+        return view('modify')->with('faq',$faq);
+    }
+    public function modifyfaq(Request $request, $id){
+        $faq = $faq=Faq::all()->where('id',$id)->first();
+        $faq->Domanda=$request->input('Domanda');
+        $faq->Risposta=$request->input('Risposta');
+        $faq->save();
+        return redirect('faq');
+        
+    }
+/* fine parte AMMINISTRATORE*/
   
 }
