@@ -22,11 +22,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         /*
-        DB::table('Faq')->insert([
-            [],
-            [],
-            
-        ]);
         
         DB::table('Azienda')->insert([
             ['Nome'=>'prova1','Sede'=>'prova1','Tipologia'=>'prova1','RegioneSociale'=>'prova1'],

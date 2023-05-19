@@ -137,22 +137,3 @@ Route::get('amministratore', [AmministratoreController::class, 'homeadmin'])->na
 
 
 require __DIR__.'/auth.php';
-
-/*
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-Route::post('/login', function (Request $request) {
-    $credentials = $request->only('username', 'password');
-
-    if (Auth::attempt($credentials)) {
-        // L'utente è autenticato
-        return redirect()->intended('/');
-    } else {
-        // Le credenziali non sono corrette
-        return back()->withErrors([
-            'username' => 'Credenziali non valide',
-        ]);
-    }
-})->name('login');
-*/
