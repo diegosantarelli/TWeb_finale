@@ -21,14 +21,8 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
-        /*
         
-        DB::table('Azienda')->insert([
-            ['Nome'=>'prova1','Sede'=>'prova1','Tipologia'=>'prova1','RegioneSociale'=>'prova1'],
-            ['Nome'=>'prova2','Sede'=>'prova2','Tipologia'=>'prova2','RegioneSociale'=>'prova2'],
-        ]);
-         
-
+        
         DB::table('Offerte')->insert([
             ['Categoria'=>'Animali', 'DescrizioneOfferta'=> '...', 'Scadenza'=>'20/10/2020','Oggetto'=>'Tiragraffi per gatto','Azienda'=>'Angelini','Prezzo'=>160,'PercentualeSconto'=>'10','Luogo'=>'Negozio fisico','Modalità'=>'Utilizzo online', 'PrezzoScontato'=>100, 'Evidenza'=>'no'],
             ['Categoria'=>'Bambini','DescrizioneOfferta'=> '...','Scadenza'=>'20/10/2020','Oggetto'=>'Accappatoio','Azienda'=>'Angelini','Prezzo'=>150,'PercentualeSconto'=>'20','Luogo'=>'Sito web','Modalità'=>'Utilizzo in negozio', 'PrezzoScontato'=>100, 'Evidenza'=>'sì'],
@@ -55,6 +49,7 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Roseto',
                 'telefono' => '3409139863',
                 'username' => 'simone',
+                'id' => 'simone'
             ],
             [
                 'cognome' => 'Staff',
@@ -67,7 +62,8 @@ class DatabaseSeeder extends Seeder
                 'possibilità_abbinamento' => 1,
                 'residenza' => 'Martinsicuro',
                 'telefono' => '3758492345',
-                'username' => 'membrostaff'
+                'username' => 'membrostaff',
+                'id' => 'simone'
             ],
             [
                 'cognome' => 'Admin',
@@ -80,16 +76,12 @@ class DatabaseSeeder extends Seeder
                 'possibilità_abbinamento' => 0,
                 'residenza' => 'Ancona',
                 'telefono' => '3409139863',
-                'username' => 'admin'
+                'username' => 'admin',
+                'id' => 'simone'
             ]
         ]);
 
-    /* 
-            User::create([
-            'name' => 'Simone',
-            'password' => Hash::make('password'),
-        ]);
-    */ 
+  
     DB::table('Aziende')->insert([
         [
             'Nome' => 'Amazon',

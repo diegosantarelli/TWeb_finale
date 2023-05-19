@@ -15,7 +15,7 @@ return new class extends Migration
         public function up()
     {
         Schema::create('Users', function (Blueprint $table) {
-            //$table->bigIncrements('id');
+            $table->string('id');
             $table->string('username',25)->primary();
             $table->string('password',255)->nullable();
             $table->string('email',25);
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('genere',25);
             $table->integer('età')->unsigned()->limit(3);
             $table->string('residenza',25);
+            $table->rememberToken();
         });
     }
     
@@ -39,5 +40,9 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('Users');
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropRememberToken();
+        });
     }
 };

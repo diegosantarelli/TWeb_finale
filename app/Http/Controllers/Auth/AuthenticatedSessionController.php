@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller {
 
@@ -41,7 +42,7 @@ class AuthenticatedSessionController extends Controller {
                 return redirect()->route('livello2.home');
                 break;
             case 3:
-                return redirect()->route('livello3.home');
+                return redirect()->route('homeadmin');
                 break;
             default:
                 return redirect('/');
@@ -111,6 +112,10 @@ public function store(Request $request) {
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function showHomeUser():View {
+        return view('homeuser');
     }
 
 }
