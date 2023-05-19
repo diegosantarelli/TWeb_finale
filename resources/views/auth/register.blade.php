@@ -4,7 +4,7 @@
 
 @section('content')
 
-<!-- HTML generato già nel file 
+<!-- parte di codice generato già nel file 
     
 <link rel="stylesheet" type="text/css" href="{{asset('css/Registrazione.css')}}">
 <div class="static">
@@ -234,7 +234,9 @@
           <div class="input-box">  
           {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
                 {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm', 'placeholder' => 'Conferma password']) }}
-          </div>
+                <!-- tramite password_confirmation laravel capisce che deve cintrollare che le due pass siano uguali
+                        VINCOLO DI TIPO NOMINATIVO -->
+            </div>
 
 </div>
 

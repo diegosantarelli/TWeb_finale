@@ -3,7 +3,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{asset('css/Login.css')}}">
 
-<!-- HTML generato già nel file 
+<!-- parte di codice generato già nel file 
     
 <div class="static">
     <h1>Accedi</h1>

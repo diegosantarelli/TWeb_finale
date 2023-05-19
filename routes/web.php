@@ -36,7 +36,7 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
         ->name('newproduct.store');
 
-Route::get('/user', [UserController::class, 'index'])
+Route::get('/user', [UserController::class, 'index'])                   //--------------QUA VA IL CAN:ISUSER--------------- 
         ->name('user')->middleware('can:isUser');
 
 
