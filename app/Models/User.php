@@ -81,5 +81,8 @@ class User extends Authenticatable
         return $this->password;
     }
 
-
+    public function hasLevel($livello) {
+        $livello = (array)$livello;
+        return in_array($this->livello, $livello);
+    }
 }
