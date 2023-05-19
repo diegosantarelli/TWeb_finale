@@ -1,10 +1,7 @@
-@extends('public')
+@extends('layouts.navadmin')
 @section('content')
 
-
-
 <link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
-
 
 <div id="catalogo">
     
@@ -29,7 +26,7 @@
 <a href="{{route('modificaazienda')}}">modifica un'azienda'</a>
         
    
-    </div>
+</div>
 
 
 @endsection()
