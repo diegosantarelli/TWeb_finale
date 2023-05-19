@@ -46,17 +46,6 @@ Route::view('/where', 'where')
 Route::view('/who', 'who')
         ->name('who');
 
-/*  Rotte aggiunte da Breeze
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-*/
 
 /* Rotta per la vista 'home' */
 Route::get('/', [PublicController::class, 'showHome']) ->name('home');
