@@ -133,7 +133,7 @@ Route::middleware([Authenticate::class, 'auth'])->group(function () {
     
 
 
-Route::get('amministratore', [AmministratoreController::class, 'homeadmin'])->name('amministratore');
+Route::get('/amministratore', [AmministratoreController::class, 'homeadmin'])->name('amministratore');
 
 Route::get('/homeuser', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showHomeUser'])->name('homeuser');
 require __DIR__.'/auth.php';

@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller {
                 return redirect()->route('livello2.home');
                 break;
             case 3:
-                return redirect()->route('homeadmin');
+                return redirect()->route('amministratore');
                 break;
             default:
                 return redirect('/');

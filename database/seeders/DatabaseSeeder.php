@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Roseto',
                 'telefono' => '3409139863',
                 'username' => 'simone',
-                'id' => 'simone'
+                'id' => ''
             ],
             [
                 'cognome' => 'Staff',
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Martinsicuro',
                 'telefono' => '3758492345',
                 'username' => 'membrostaff',
-                'id' => 'simone'
+                'id' => ''
             ],
             [
                 'cognome' => 'Admin',
@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Ancona',
                 'telefono' => '3409139863',
                 'username' => 'admin',
-                'id' => 'simone'
+                'id' => ''
             ]
         ]);
 
