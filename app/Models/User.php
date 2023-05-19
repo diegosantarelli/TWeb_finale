@@ -80,7 +80,8 @@ class User extends Authenticatable
     {
         return $this->password;
     }
-
+    
+    /* Funzione per verificare il livello di utenza dell'utente loggato */
     public function hasLevel($livello) {
         $livello = (array)$livello;
         return in_array($this->livello, $livello);
