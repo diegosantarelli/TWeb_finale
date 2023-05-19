@@ -52,7 +52,7 @@
     transition: all 0.6s;
 }
 
-.right ul li .accedi, .right ul li .registrati {
+.right ul li .accedi, .right ul li .registrati,.right ul li .profilo, .right ul li .logout {
   padding: 8px 15px;
   font-size: 1.2rem;
   color: #fff;
@@ -67,15 +67,20 @@
   margin-left: 300px;
 }
 
-.right ul li .accedi:hover, .right ul li .registrati:hover {
-  border: 2px solid rgb(88,185,157);
+.right ul li .accedi:hover, .right ul li .registrati:hover,.right ul li .profilo:hover {
+  background-color: rgb(88,185,157);
   border-radius: 45px;
-  color: rgb(88,185,157);
+  color: rgb(252, 252, 252);
+}
+
+.right ul li .logout:hover{
+  background-color: rgb(255, 39, 39);
+  border-radius: 45px;
+  color: rgb(252, 252, 252);
 }
 
 .right ul li a:hover {
   color: #fff;
-  border-radius: 7px;
   padding: 8px 15px;
 }
 

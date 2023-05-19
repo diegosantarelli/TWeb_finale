@@ -40,8 +40,8 @@
             @endguest
 
             @auth
-            <li><a href="#" class="accedi">Profilo</a></li>
-            <li><a href="" title="Esci dal sito" class="registrati" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+            <li><a href="#" class="profilo">Profilo</a></li>
+            <li><a href="" title="Esci dal sito" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}  
             </form>           
