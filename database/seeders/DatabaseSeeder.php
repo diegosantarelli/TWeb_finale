@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
                 'genere' => 'Uomo',
                 'livello' => 1,
                 'nome' => 'Diego',
-                'password' => Hash::make('14'),
+                'password' => Hash::make('11'),
                 'possibilità_abbinamento' => 1,
                 'residenza' => 'Martinsicuro',
                 'telefono' => '3758492345',
