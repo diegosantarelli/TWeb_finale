@@ -78,6 +78,20 @@ class DatabaseSeeder extends Seeder
                 'telefono' => '3409139863',
                 'username' => 'admin',
                 'id' => ''
+            ],
+            [
+                'cognome' => 'Staff',
+                'email' => 'membro@gmail.com',
+                'età' => 32,
+                'genere' => 'Uomo',
+                'livello' => 1,
+                'nome' => 'Diego',
+                'password' => Hash::make('14'),
+                'possibilità_abbinamento' => 1,
+                'residenza' => 'Martinsicuro',
+                'telefono' => '3758492345',
+                'username' => 'dieghez',
+                'id' => ''
             ]
         ]);
 
