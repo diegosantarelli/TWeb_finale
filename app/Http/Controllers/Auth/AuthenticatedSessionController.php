@@ -49,8 +49,9 @@ class AuthenticatedSessionController extends Controller {
             }
         /**
          * Redirezione su diverse Home Page in base alla classe d'utenza.
+         * return redirect()->intended(RouteServiceProvider::HOME);
          */
-        return redirect()->intended(RouteServiceProvider::HOME);
+        
     }
  /*       $role = auth()->user()->role;
         switch ($role) {
