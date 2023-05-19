@@ -32,9 +32,22 @@
             <li class="center"><a href="{{route('info')}}" >Info</a></li>
             <!-- <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> -->
             <!--<li> <form action="{{ route('search')}}" method="GET"><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> <button type="submit">Cerca</button> </form> -->
+            
+            
+            @guest
             <li><a href="{{route('login')}}" class="accedi">Accedi</a></li>
             <li><a href="{{route('register')}}" class="registrati">Registrati</a></li>
+            @endguest
 
+            @auth
+            <li><a href="#" class="accedi">Profilo</a></li>
+            <li><a href="" title="Esci dal sito" class="registrati" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}  
+            </form>           
+            @endauth    
+
+            
 
         </ul>
 
@@ -45,9 +58,9 @@
 <!-- <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit">Logout</button>
-</form>
+</form>-->
 
-<!----------------- CONTENT ------------------->
+<!---------------- CONTENT ------------------->
 
 <div class="content">
     @yield('content')

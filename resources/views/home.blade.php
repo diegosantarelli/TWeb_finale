@@ -76,6 +76,12 @@ dots[slideIndex-1].className += " active";
             </div>
             </a>
         @endforeach
+        
+            <a class="card-empty" href="{{route('catalogo')}}">
+                
+               <h4> Visualizza tutte le offerte </h4>
+
+            </a>
     
 </div>
 

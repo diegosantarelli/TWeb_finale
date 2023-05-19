@@ -31,7 +31,7 @@
             <li class="center"><a href="{{route('faq')}}">FAQs</a></li>
             <li class="center"><a href="{{route('info')}}" >Info</a></li>
             
-            <form action="{{ route('logout') }}" method="POST" class="accedi">
+            <form action="{{ route('logout') }}" method="POST" class="logout">
                     @csrf
                     <button type="submit">Logout</button>
             </form>

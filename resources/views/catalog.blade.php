@@ -30,6 +30,21 @@
     </div>
     @endforeach
 
+    <div id="content">
+    <div class="prod">
+        <div class="prod-bgtop">
+            <div class="prod-bgbtm">
+                <div class="oneitem">
+                 
+                    <div class="info">
+                        <h1 class="title">PROVA</h1>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Paginazione-->
     @include('pagination.paginator', ['paginator' => $products])
 
