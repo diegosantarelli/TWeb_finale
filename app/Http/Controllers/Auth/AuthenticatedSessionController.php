@@ -39,7 +39,7 @@ class AuthenticatedSessionController extends Controller {
                 return redirect()->route('homeuser');
                 break;
             case 2:
-                return redirect()->route('livello2.home');
+                return redirect()->route('homemembro');
                 break;
             case 3:
                 return redirect()->route('amministratore');
@@ -53,51 +53,11 @@ class AuthenticatedSessionController extends Controller {
          */
         
     }
- /*       $role = auth()->user()->role;
-        switch ($role) {
-            case 'admin': return redirect()->route('admin');
-                break;
-            case 'user': return redirect()->route('user');
-                break;
-            default: return redirect('/');
-        }
-    }
-*/
+
 /*
-public function store(Request $request) {
-    $credentials = $request->validate([
-        'username' => ['required', 'string'],
-        'password' => ['required', 'string'],
-    ]);
-
-    if (Auth::attempt($credentials)) {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        $user = Auth::user();
-        $livello = $user->livello;
-
-        switch ($livello) {
-            case 1:
-                return redirect()->route('home');
-                break;
-            case 2:
-                return redirect()->route('livello2.home');
-                break;
-            case 3:
-                return redirect()->route('livello3.home');
-                break;
-            default:
-                return redirect('/');
-        }
-    }
-
     return back()->withErrors([
         'username' => 'Queste credenziali non corrispondono ai nostri record.',
     ]);
-    
-}
 */
     /**
      * Destroy an authenticated session.
