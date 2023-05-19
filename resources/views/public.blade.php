@@ -12,7 +12,7 @@
 
 <!------------------NAVBAR------------------->
 
-<nav class="navbar">
+<nav class="navbar">  
 
     <div class="left">
 
