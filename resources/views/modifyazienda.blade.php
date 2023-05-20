@@ -1,10 +1,9 @@
 
-
-
-{{ Form::open(array('route' => 'storeazienda')) }}
+{{ Form::open(array('route' => ['modifyazienda', $azienda->id], 'method' => 'POST')) }}
+@method('PUT')
 {{ Form::token() }}
-    {{ Form::label('Nome', 'Nome') }}
-    {{ Form::text('Nome', null, ['class' => 'form-control']) }}<br>
+{{ Form::label('Nome', 'Nome') }}
+    {{ Form::text('Nome', $azienda->Nome, ['class' => 'form-control']) }}<br>
     @if ($errors->first('Nome'))
                 <ul class="errors">
                     @foreach ($errors->get('Nome') as $message)
@@ -14,7 +13,7 @@
                 @endif
 
     {{Form::label('Sede', 'Sede') }}
-    {{ Form::text('Sede', null, ['class' => 'form-control']) }}<br>
+    {{ Form::text('Sede', $azienda->Sede, ['class' => 'form-control']) }}<br>
     @if ($errors->first('Sede'))
                 <ul class="errors">
                     @foreach ($errors->get('Sede') as $message)
@@ -24,7 +23,7 @@
                 @endif
 
     {{Form::label('Tipologia', 'Tipologia') }}
-    {{ Form::text('Tipologia', null, ['class' => 'form-control']) }}<br>
+    {{ Form::text('Tipologia', $azienda->Tipologia, ['class' => 'form-control']) }}<br>
     @if ($errors->first('Tipologia'))
                 <ul class="errors">
                     @foreach ($errors->get('Tipologia') as $message)
@@ -34,7 +33,7 @@
                 @endif
 
     {{Form::label('RagioneSociale', 'RagioneSociale') }}
-    {{ Form::text('RagioneSociale', null, ['class' => 'form-control']) }}<br>
+    {{ Form::text('RagioneSociale', $azienda->RagioneSociale, ['class' => 'form-control']) }}<br>
     @if ($errors->first('RagioneSociale'))
                 <ul class="errors">
                     @foreach ($errors->get('RagioneSociale') as $message)
@@ -42,12 +41,6 @@
                     @endforeach
                 </ul>
                 @endif
-
-    {{ Form::submit('Crea azienda', ['class' => 'btn btn-primary']) }}
-
-{{ Form::close() }}
-
-
-
-      
-      
+            </a>
+            {{ Form::submit('Modifica azienda', ['class' => 'btn btn-primary']) }}
+            {{ Form::close() }}  
