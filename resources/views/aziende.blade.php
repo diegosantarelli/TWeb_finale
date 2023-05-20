@@ -10,7 +10,7 @@
             @else
                 @foreach($aziende as $azienda)
                     <a class="card" href="#">
-                        <img src="{{ asset('img/amazon.png') }}?t={{ time() }}">
+                        <img src="{{ asset('img/appleBlackLogo.png') }}?t={{ time() }}">
                             <p>{{ $azienda->Nome }}</p>
                     </a>
                 @endforeach
