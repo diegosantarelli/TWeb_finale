@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
+use App\Models\Azienda;
 use App\Models\Offerta;
 use App\Models\Faq;
 use Illuminate\Http\Request;
@@ -42,6 +43,15 @@ class PublicController extends Controller
         
         
     } 
+
+
+    public function showAziende()
+{
+    $aziende = Azienda::all();
+    
+    return view('aziende', compact('aziende'));
+}
+
     /*
     public function showCatalog($Categoria = null, $Oggetto = null)
     {
