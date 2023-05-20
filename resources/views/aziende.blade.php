@@ -9,10 +9,10 @@
                 <div class="catalogo-empty">Non sono disponibili Aziende</div>
             @else
                 @foreach($aziende as $azienda)
-                    <a class="card" href="#">
+                    <div class="card" href="#">
                         <img src="{{ asset('img/appleBlackLogo.png') }}?t={{ time() }}">
                             <p>{{ $azienda->Nome }}</p>
-                    </a>
+                    </div>
                 @endforeach
             @endif
         </div>

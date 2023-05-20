@@ -125,6 +125,13 @@ h2 {
   cursor: pointer;
 }
 
+.card p {
+  margin:8px;
+}
+.card h3 {
+  margin:8px;
+}
+
 .card:hover {
   box-shadow: 0 16px 32px 0 rgba(133, 127, 127, 0.2);
   color: #fff;

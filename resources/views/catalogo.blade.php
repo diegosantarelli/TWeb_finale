@@ -1,16 +1,6 @@
 @extends('public')
 @section('content')
 
-<style>
-    .card p {
-        margin:8px;
-    }
-    .card h3 {
-        margin:8px;
-    }
-</style>
-
-
 <link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
     <div id="container">
 
