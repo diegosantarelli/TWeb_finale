@@ -32,7 +32,7 @@
             <li class="center"><a href="{{route('faq')}}">FAQs</a></li>
             <li class="center"><a href="{{route('info')}}">Info</a></li>
             @can('isAdmin')
-            <li class="center"><a href="#">Home Admin</a></li>
+            <li class="center"><a href="#">Gestione</a></li>
             @endcan
             <!-- <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> -->
             <!--<li> <form action="{{ route('search')}}" method="GET"><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> <button type="submit">Cerca</button> </form> -->
