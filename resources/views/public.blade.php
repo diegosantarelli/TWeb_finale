@@ -28,6 +28,7 @@
 
             <li class="center"><a href="{{route('home')}}">Home</a></li>
             <li class="center"><a href="{{route('catalogo')}}">Catalogo</a></li>
+            <li class="center"><a href="{{route('aziende')}}">Aziende</a></li>
             <li class="center"><a href="{{route('faq')}}">FAQs</a></li>
             <li class="center"><a href="{{route('info')}}" >Info</a></li>
             <!-- <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> -->

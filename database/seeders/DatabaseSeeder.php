@@ -110,8 +110,26 @@ class DatabaseSeeder extends Seeder
             'Tipologia' => 'sport',
             'RagioneSociale' => 'vrt73',
             
+        ],
+
+        [
+            'Nome' => 'Adidas',
+            'Sede' => 'Martinsicuro',
+            'Tipologia' => 'sport',
+            'RagioneSociale' => 'jhwfhewg7453',
+            
+        ],
+
+        [
+            'Nome' => 'Ebay',
+            'Sede' => 'Ancona',
+            'Tipologia' => 'e-commerce',
+            'RagioneSociale' => 'jhwfhewg7487983',
+            
         ]
-    ]);      
+
+
+    ]);
    
     }
 }
