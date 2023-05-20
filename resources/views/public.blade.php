@@ -12,7 +12,7 @@
 
 <!------------------NAVBAR------------------->
 
-<nav class="navbar">  
+<nav class="navbar">
 
     <div class="left">
 
@@ -31,29 +31,30 @@
             <li class="center"><a href="{{route('aziende')}}">Aziende</a></li>
             <li class="center"><a href="{{route('faq')}}">FAQs</a></li>
             <li class="center"><a href="{{route('info')}}">Info</a></li>
-           
+
             <!-- <li><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> </li> -->
             <!--<li> <form action="{{ route('search')}}" method="GET"><input type="search" placeholder="Cerca su Cheapest Coupons" > <i class="fa fa-times search-clear"></i> <button type="submit">Cerca</button> </form> -->
-            
-            
+
+
             @guest
             <li><a href="{{route('login')}}" class="accedi">Accedi</a></li>
             <li><a href="{{route('register')}}" class="registrati">Registrati</a></li>
             @endguest
             @auth
-    @if(Auth::user()->can('isAdmin'))
-        <li class="center"><a href="#">Gestione</a></li>
-    @endif
-@endauth
+                @if(Auth::user()->can('isAdmin'))
+                    <li class="center"><a href="#">Gestione</a></li>
+                @endif
+            @endauth
+
             @auth
-            <li><a href="#" class="profilo">Profilo</a></li>
+            <li><a href="{{route('profile')}}" class="profilo">Profilo</a></li>
             <li><a href="" title="Esci dal sito" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}  
-            </form>           
-            @endauth     
+            {{ csrf_field() }}
+            </form>
+            @endauth
 
-            
+
 
         </ul>
 
@@ -61,10 +62,6 @@
 
 </nav>
 
-<!-- <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit">Logout</button>
-</form>-->
 
 <!---------------- CONTENT ------------------->
 

@@ -1,4 +1,4 @@
-@extends('layouts.navadmin')
+@extends('public')
 
 @section('content')
 <div class="static">

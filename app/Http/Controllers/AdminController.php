@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 
 use App\Models\Admin;
 /*use App\Models\Resources\Product;
@@ -10,12 +10,13 @@ use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewAziendaRequest;
 use App\Http\Requests\NewFaqRequest;
+use Illuminate\Support\Facades\Auth;
 
 
 class AdminController extends Controller {
-    
+
     protected $_adminModel;
-    
+
     public function __construct() {
         $this->_adminModel = new Admin;
         $this->middleware('can:isAdmin');
@@ -68,15 +69,15 @@ class AdminController extends Controller {
     public function storeazienda(NewAziendaRequest $request){
         $azienda = new Azienda;
         //bisogna controllare tramite form che tutti i campi siano inseriti
-        
+
         $azienda->Nome=$request->input('Nome');
         $azienda->Sede=$request->input('Sede');
         $azienda->Tipologia=$request->input('Tipologia');
         $azienda->RagioneSociale=$request->input('RagioneSociale');
         $azienda->save();
-        
+
         return redirect('amministratore');
-        
+
     }
 
     public function deleteazienda(){
@@ -113,15 +114,15 @@ class AdminController extends Controller {
 
     /* FAQ-------------------------------------------------------------------------------------------------*/
     public function insertfaq(){
-        
+
         return view('insertfaq');
-        
+
 
     }
 
 
     public function storefaq(NewFaqRequest $request){
-        
+
         $faq = new Faq;
         if (isset($request->Domanda)&&isset($request->Risposta)){
             $faq->Domanda = $request->input('Domanda');
@@ -132,7 +133,7 @@ class AdminController extends Controller {
         else{
             return redirect('faq');
         }
-        
+
 
     }
 
@@ -162,7 +163,14 @@ class AdminController extends Controller {
         $faq->Risposta=$request->input('Risposta');
         $faq->save();
         return redirect('faq');
-        
+
     }
 /* FAQ-------------------------------------------------------------------------------------------------*/
+
+    public function showProfile()
+    {
+        $user = Auth::user();
+
+        return view('profile', ['user' => $user]);
+    }
 }

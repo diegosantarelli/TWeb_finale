@@ -35,7 +35,7 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
         ->name('newproduct.store');
 
-Route::get('/user', [UserController::class, 'index'])                   //--------------QUA VA IL CAN:ISUSER--------------- 
+Route::get('/user', [UserController::class, 'index'])                   //--------------QUA VA IL CAN:ISUSER---------------
         ->name('user')->middleware('can:isUser');
 
 
@@ -118,15 +118,18 @@ Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->na
 
 /* Rotta che protegge altre rotte quando l'utente non è autenticato*/
 
-//Route::middleware([Authenticate::class, 'auth'])->group(function () {
+Route::middleware([Authenticate::class, 'auth'])->group(function () {
         // Rotte protette dall'autenticazione
-        // mettere rotta che ti collega alla pagina del coupon da stampare 
-
-   // });
+        // mettere rotta che ti collega alla pagina del coupon da stampare
+        Route::get('/profile', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
+    });
 
  Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
 
-Route::get('/homeuser', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showHomeUser'])->name('homeuser');
+Route::get('/homeuser', [UserController::class, 'showHomeUser'])->name('homeuser');
+
+
+//Route::get('/profile', [AdminController::class, 'showProfile'])->name('profile');
 require __DIR__.'/auth.php';
 
 Route::get('/profile', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');

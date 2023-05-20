@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller {
 
         $request->session()->regenerate();
 
-        
+
         $role = auth()->user()->role;
 
         switch ($role) {
@@ -51,7 +51,8 @@ class AuthenticatedSessionController extends Controller {
          * Redirezione su diverse Home Page in base alla classe d'utenza.
          * return redirect()->intended(RouteServiceProvider::HOME);
          */
-        
+
+
     }
 
 /*
@@ -66,8 +67,8 @@ class AuthenticatedSessionController extends Controller {
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Request $request) {
-        //Auth::guard('web')->logout();
-        Auth::logout();
+        Auth::guard('web')->logout();
+
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
@@ -75,8 +76,12 @@ class AuthenticatedSessionController extends Controller {
         return redirect('/');
     }
 
-    public function showHomeUser():View {
-        return view('homeuser');
+    public function showProfile()
+    {
+        $user = Auth::user();
+
+        return view('profile', ['user' => $user]);
     }
+
 
 }

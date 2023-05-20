@@ -30,21 +30,15 @@
             <li class="center"><a href="{{route('catalogo')}}">Catalogo</a></li>
             <li class="center"><a href="{{route('faq')}}">FAQs</a></li>
             <li class="center"><a href="{{route('info')}}" >Info</a></li>
-            
+
             <form action="{{ route('logout') }}" method="POST" class="logout">
                     @csrf
                     <button type="submit">Logout</button>
             </form>
-           
+
         </ul>
 
     </div>
 
 </nav>
 
-
-<!----------------- CONTENT ------------------->
-
-<div class="content">
-    @yield('content')
-</div>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\User;
+//use App\Models\User;
 
 class User extends Authenticatable
 {
@@ -35,7 +35,7 @@ class User extends Authenticatable
         'role',
         'nome',
         'password',
-        'possibilità_abbinamento',
+        //'possibilità_abbinamento',
         'residenza',
         'telefono',
         'username',
@@ -63,9 +63,9 @@ class User extends Authenticatable
 
     /**
      * Indicates if the model should be timestamped.
-     * Usato per togliere L'errore indica che il campo 
-     * 'updated_at' non è presente nella tabella 'users'. 
-     * Laravel di default assume che le tabelle abbiano i campi 'created_at' 
+     * Usato per togliere L'errore indica che il campo
+     * 'updated_at' non è presente nella tabella 'users'.
+     * Laravel di default assume che le tabelle abbiano i campi 'created_at'
      * e 'updated_at' per la gestione automatica delle date di creazione e modifica dei record.
      * @var bool
      */
@@ -80,10 +80,11 @@ class User extends Authenticatable
     {
         return $this->password;
     }
-    
+
     /* Funzione per verificare il livello di utenza dell'utente loggato */
     public function hasRole($role) {
         $role = (array)$role;
         return in_array($this->role, $role);
     }
+
 }

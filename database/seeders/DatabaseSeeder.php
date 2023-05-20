@@ -17,15 +17,15 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    
+
 
     public function run()
     {
-        
-        
+
+
         DB::table('Offerte')->insert([
-            ['Categoria'=>'Animali', 
-            'DescrizioneOfferta'=> '...', 
+            ['Categoria'=>'Animali',
+            'DescrizioneOfferta'=> '...',
             'Scadenza'=>'20/10/2020',
             'Oggetto'=>'Tiragraffi per gatto',
             'Azienda'=>'Angelini',
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'PercentualeSconto'=>'10',
             'Luogo'=>'Negozio fisico',
             'Modalità'=>'Utilizzo online',
-            'PrezzoScontato'=>100, 
+            'PrezzoScontato'=>100,
             'Evidenza'=>'no',
             'image' => 'Tiragraffi.png'],
 
@@ -144,7 +144,7 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
-  
+
     DB::table('Aziende')->insert([
         [
             'Nome' => 'Nike',
@@ -152,7 +152,7 @@ class DatabaseSeeder extends Seeder
             'Tipologia' => 'e-commerce',
             'RagioneSociale' => 'jhwfhewg743',
             'image' => 'nike.png',
-            
+
         ],
         [
             'Nome' => 'Apple',
@@ -160,7 +160,7 @@ class DatabaseSeeder extends Seeder
             'Tipologia' => 'sport',
             'RagioneSociale' => 'vrt73',
             'image' => 'apple.png',
-            
+
         ],
 
         [
@@ -169,7 +169,7 @@ class DatabaseSeeder extends Seeder
             'Tipologia' => 'sport',
             'RagioneSociale' => 'jhwfhewg7453',
             'image' => 'amazon.png',
-            
+
         ],
 
         [
@@ -179,11 +179,11 @@ class DatabaseSeeder extends Seeder
             'RagioneSociale' => 'jhwfhewg7487983',
             'image' => '',
 
-            
+
         ]
 
 
     ]);
-   
+
     }
 }

@@ -39,10 +39,3 @@
     </div>
 
 </nav>
-
-
-<!----------------- CONTENT ------------------->
-
-<div class="content">
-    @yield('content')
-</div>

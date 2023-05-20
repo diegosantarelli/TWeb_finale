@@ -24,7 +24,7 @@
   Questi elementi HTML definiscono un link ipertestuale che, quando viene cliccato, esegue una funzione JavaScript
   per passare alla diapositiva precedente (o successiva) in uno slideshow. -->
 
-<a class="prev" onclick="plusSlides(-1)">❮</a> 
+<a class="prev" onclick="plusSlides(-1)">❮</a>
 <a class="next" onclick="plusSlides(1)">❯</a>
 
 </div>
@@ -48,15 +48,15 @@ function showSlides(n) {
 let i;
 let slides = document.getElementsByClassName("mySlides");
 let dots = document.getElementsByClassName("dot");
-if (n > slides.length) {slideIndex = 1}    
+if (n > slides.length) {slideIndex = 1}
 if (n < 1) {slideIndex = slides.length}
 for (i = 0; i < slides.length; i++) {
-  slides[i].style.display = "none";  
+  slides[i].style.display = "none";
 }
 for (i = 0; i < dots.length; i++) {
   dots[i].className = dots[i].className.replace(" active", "");
 }
-slides[slideIndex-1].style.display = "block";  
+slides[slideIndex-1].style.display = "block";
 dots[slideIndex-1].className += " active";
 }
 </script>
@@ -65,8 +65,15 @@ dots[slideIndex-1].className += " active";
 <hr>
 <br>
 
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
 <div id="catalogo">
-    
+
     <h3 class="card_title">Offerte in evidenza</h3>
         @foreach($offerte as $offerta)
         <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
@@ -80,13 +87,13 @@ dots[slideIndex-1].className += " active";
             </div>
             </a>
         @endforeach
-        
+
             <a class="card-empty" href="{{route('catalogo')}}">
-                
+
                <h4> Visualizza tutte le offerte </h4>
 
             </a>
-    
+
 </div>
 
 </div>
