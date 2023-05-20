@@ -1,5 +1,16 @@
 @extends('public')
 @section('content')
+
+<style>
+    .card p {
+        margin:8px;
+    }
+    .card h3 {
+        margin:8px;
+    }
+</style>
+
+
 <link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
     <div id="container">
 
@@ -33,9 +44,11 @@
     @else
     @foreach($offerte as $offerta)
             <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
+                <h3>{{$offerta->Azienda}}</h3>
                 <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >
             <div class="container_card">
                 <p>{{$offerta->Oggetto}}</p>
+                <p style="font-size:30px;">{{$offerta->Prezzo}}$</p>
             </div>
             </a>
         @endforeach
