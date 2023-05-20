@@ -46,11 +46,18 @@ class PublicController extends Controller
 
 
     public function showAziende()
-{
-    $aziende = Azienda::all();
+    {
+        $aziende = Azienda::all();
+        
+        return view('aziende', compact('aziende'));
+    }
+
+    public function showSingleAzienda($id): View
+    {
+        $selAzienda = Azienda::all()->where('id', $id)->first();
     
-    return view('aziende', compact('aziende'));
-}
+        return view('paginaazienda')->with('selAzienda',$selAzienda);
+    }
 
     /*
     public function showCatalog($Categoria = null, $Oggetto = null)

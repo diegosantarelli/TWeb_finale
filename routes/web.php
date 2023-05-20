@@ -61,6 +61,9 @@ Route::get('/info', [PublicController::class, 'showInfo']) ->name('info');
 /* Rotta per la vista 'aziende' */
 Route::get('/aziende', [PublicController::class, 'showAziende'])->name('aziende');
 
+/*Rotta per la singola azienda*/
+Route::get('/azienda/{id}', [PublicController::class, 'showSingleAzienda'])->name('paginaazienda');
+
 /* Rotta per la vista 'login' */
 /*Route::get('/login', [PublicController::class, 'showLogin']) ->name('login');*/
 //Route::post('/login', [PublicController::class, 'showLogin'])->name('login');

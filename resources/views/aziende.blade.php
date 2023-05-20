@@ -9,13 +9,13 @@
                 <div class="catalogo-empty">Non sono disponibili Aziende</div>
             @else
                 @foreach($aziende as $azienda)
-                    <div class="card" href="#">
+                    <a class="card" href="{{route('paginaazienda', [$azienda->id])}}">
                     <p>{{ $azienda->Nome }}</p>
                     <div class="image">
                         @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $azienda->image])
                     </div>
                     
-                    </div>
+                    </a>
                 @endforeach
             @endif
         </div>
