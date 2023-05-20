@@ -3,10 +3,13 @@
 namespace App\Http\Controllers; 
 
 use App\Models\Admin;
-use App\Models\Resources\Product;
-use App\Http\Requests\NewProductRequest;
+/*use App\Models\Resources\Product;
+use App\Http\Requests\NewProductRequest;*/
 use App\Models\Azienda;
 use App\Models\Faq;
+use Illuminate\Http\Request;
+use App\Http\Requests\NewAziendaRequest;
+
 
 class AdminController extends Controller {
     /*
@@ -72,6 +75,38 @@ class AdminController extends Controller {
         
         return redirect('amministratore');
         
+    }
+
+    public function deleteazienda(){
+        $aziende=Azienda::all();
+        return view('deleteazienda')->with('aziende',$aziende);
+    }
+
+    public function destroyazienda($id){
+        Azienda::destroy($id);
+        return redirect('amministratore');
+    }
+
+    public function modificaazienda(){
+        $aziende=Azienda::all();
+        return view('modificaazienda')->with('aziende',$aziende);
+    }
+
+    public function updateazienda($id){
+        $azienda=Azienda::all()->where('id',$id)->first();
+        return view('modifyazienda')->with('azienda',$azienda);
+    }
+
+    public function modifyazienda(NewAziendaRequest $request,$id)
+    {
+
+        $azienda = Azienda::find($id);
+        $azienda->Nome=$request->input('Nome');
+        $azienda->Sede=$request->input('Sede');
+        $azienda->Tipologia=$request->input('Tipologia');
+        $azienda->RagioneSociale=$request->input('RagioneSociale');
+        $azienda->save();
+        return redirect('amministratore');
     }
 
     /* FAQ-------------------------------------------------------------------------------------------------*/
