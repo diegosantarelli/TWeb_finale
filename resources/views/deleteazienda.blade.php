@@ -1,3 +1,5 @@
+@extends('public')
+@section('content')
 @foreach($aziende as $azienda)
 {{ Form::open(array('route' => ['destroyazienda', $azienda->id], 'method' => 'POST')) }}
 @method('DELETE')
@@ -11,5 +13,5 @@
             {{ Form::submit('Elimina azienda', ['class' => 'btn btn-primary']) }}
             {{ Form::close() }}  
         @endforeach
-    
+@endsection
 

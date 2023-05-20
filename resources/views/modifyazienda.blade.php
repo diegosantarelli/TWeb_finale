@@ -1,4 +1,5 @@
-
+@extends('public')
+@section('content')
 {{ Form::open(array('route' => ['modifyazienda', $azienda->id], 'method' => 'POST')) }}
 @method('PUT')
 {{ Form::token() }}
@@ -44,3 +45,4 @@
             </a>
             {{ Form::submit('Modifica azienda', ['class' => 'btn btn-primary']) }}
             {{ Form::close() }}  
+endsection

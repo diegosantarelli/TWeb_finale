@@ -1,4 +1,5 @@
-
+@extends('public')
+@section('content')
 
 
 {{ Form::open(array('route' => 'storeazienda')) }}
@@ -47,7 +48,7 @@
 
 {{ Form::close() }}
 
-
+@endsection
 
       
       

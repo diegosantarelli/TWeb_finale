@@ -1,3 +1,6 @@
+@extends('public')
+@section('content')
+
 @foreach($aziende as $azienda)
 {{ Form::open(array('route' => ['updateazienda', $azienda->id], 'method' => 'GET')) }}
 @method('GET')
@@ -11,3 +14,5 @@
             {{ Form::submit('Modifica azienda', ['class' => 'btn btn-primary']) }}
             {{ Form::close() }}  
         @endforeach
+
+@endsection

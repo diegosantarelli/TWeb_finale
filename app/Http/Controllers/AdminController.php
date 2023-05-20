@@ -152,7 +152,7 @@ class AdminController extends Controller {
 
     public function updatefaq($id){
         $faq=Faq::all()->where('id',$id)->first();
-        return view('modify')->with('faq',$faq);
+        return view('modifyfaq')->with('faq',$faq);
     }
     public function modifyfaq(Request $request, $id){
         $faq = $faq=Faq::all()->where('id',$id)->first();
