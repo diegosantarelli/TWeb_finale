@@ -70,7 +70,9 @@ dots[slideIndex-1].className += " active";
     <h3 class="card_title">Offerte in evidenza</h3>
         @foreach($offerte as $offerta)
             <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
-                <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >
+            <div class="image">
+                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $offerta->image])
+                    </div>
             <div class="container_card">
                 <p>{{$offerta->Oggetto}}</p>
             </div>
