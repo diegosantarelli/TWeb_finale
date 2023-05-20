@@ -27,6 +27,7 @@
             @endforeach
     </div>
 
+
    <div id="catalogo">
         <h2>Offerte</h2>
         @if (count($offerte) == 0)
@@ -35,7 +36,9 @@
     @foreach($offerte as $offerta)
             <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
                 <h3>{{$offerta->Azienda}}</h3>
-                <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >
+                <div class="image">
+                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $offerta->image])
+                    </div>
             <div class="container_card">
                 <p>{{$offerta->Oggetto}}</p>
                 <p style="font-size:30px;">{{$offerta->Prezzo}}$</p>

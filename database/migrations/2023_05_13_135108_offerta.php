@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('Luogo',50);
             $table->string('Modalità',50);
             $table->string('Evidenza',10);
+            $table->text('image')->nullable();
         });
     }
 
