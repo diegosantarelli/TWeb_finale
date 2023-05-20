@@ -120,8 +120,8 @@ Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->na
         // mettere rotta che ti collega alla pagina del coupon da stampare 
 
    // });
-/*
- Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');*/
+
+ Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
 
 Route::get('/homeuser', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showHomeUser'])->name('homeuser');
 require __DIR__.'/auth.php';
