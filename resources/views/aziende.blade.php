@@ -10,15 +10,14 @@
             @else
                 @foreach($aziende as $azienda)
                     <div class="card" href="#">
-                        <img src="{{ asset('img/appleBlackLogo.png') }}?t={{ time() }}">
-                            <p>{{ $azienda->Nome }}</p>
+                    <p>{{ $azienda->Nome }}</p>
+                    <div class="image">
+                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $azienda->image])
+                    </div>
+                    
                     </div>
                 @endforeach
             @endif
         </div>
     </div>
 @endsection
-
-
-    
-

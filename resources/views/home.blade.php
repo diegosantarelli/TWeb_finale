@@ -69,12 +69,14 @@ dots[slideIndex-1].className += " active";
     
     <h3 class="card_title">Offerte in evidenza</h3>
         @foreach($offerte as $offerta)
-            <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
-            <div class="image">
+        <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
+                <h3>{{$offerta->Azienda}}</h3>
+                <div class="image">
                         @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $offerta->image])
                     </div>
             <div class="container_card">
                 <p>{{$offerta->Oggetto}}</p>
+                <p style="font-size:30px;">-{{$offerta->PercentualeSconto}}%</p>
             </div>
             </a>
         @endforeach
@@ -89,3 +91,5 @@ dots[slideIndex-1].className += " active";
 
 </div>
 @endsection
+
+

@@ -41,7 +41,7 @@
                     </div>
             <div class="container_card">
                 <p>{{$offerta->Oggetto}}</p>
-                <p style="font-size:30px;">{{$offerta->Prezzo}}$</p>
+                <p style="font-size:30px;">-{{$offerta->PercentualeSconto}}%</p>
             </div>
             </a>
         @endforeach

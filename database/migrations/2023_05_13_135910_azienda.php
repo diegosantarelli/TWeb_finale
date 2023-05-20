@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Sede',25);
             $table->string('Tipologia',25);
             $table->string('RagioneSociale',25);
+            $table->text('image')->nullable();
         });
     }
 

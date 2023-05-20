@@ -147,25 +147,28 @@ class DatabaseSeeder extends Seeder
   
     DB::table('Aziende')->insert([
         [
-            'Nome' => 'Amazon',
+            'Nome' => 'Nike',
             'Sede' => 'Polverigi',
             'Tipologia' => 'e-commerce',
             'RagioneSociale' => 'jhwfhewg743',
+            'image' => 'nike.png',
             
         ],
         [
-            'Nome' => 'Nike',
+            'Nome' => 'Apple',
             'Sede' => 'Polverigi',
             'Tipologia' => 'sport',
             'RagioneSociale' => 'vrt73',
+            'image' => 'apple.png',
             
         ],
 
         [
-            'Nome' => 'Adidas',
+            'Nome' => 'Amazon',
             'Sede' => 'Martinsicuro',
             'Tipologia' => 'sport',
             'RagioneSociale' => 'jhwfhewg7453',
+            'image' => 'amazon.png',
             
         ],
 
@@ -174,6 +177,8 @@ class DatabaseSeeder extends Seeder
             'Sede' => 'Ancona',
             'Tipologia' => 'e-commerce',
             'RagioneSociale' => 'jhwfhewg7487983',
+            'image' => '',
+
             
         ]
 

@@ -59,8 +59,8 @@ CSS SLIDESHOW
 }
 
 #catalogo img{
-  width:100%;
-}
+  height: 150px;
+  width:  150px;}
 
 #catalogo{
   text-align: center; 
@@ -76,8 +76,8 @@ CSS SLIDESHOW
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 200px;
-  height: 10%;
+  width: 250px;
+  height: 280px;
   text-align: center;
   padding: 8px;
   display: inline-block;
