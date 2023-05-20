@@ -80,36 +80,36 @@ Route::get('/search', [PublicController::class, 'search'])->name('search');
 
 
 /*CUD Faq----------------------------------------------------------------------------------------------------------------*/
-Route::get('/insertfaq', [PublicController::class, 'insertfaq'])->name('insertfaq');
+Route::get('/insertfaq', [AdminController::class, 'insertfaq'])->name('insertfaq');
 
-Route::post('/storefaq', [PublicController::class, 'storefaq'])->name('storefaq');
+Route::post('/storefaq', [AdminController::class, 'storefaq'])->name('storefaq');
 
-Route::get('/deletefaq', [PublicController::class, 'deletefaq'])->name('deletefaq');
+Route::get('/deletefaq', [AdminController::class, 'deletefaq'])->name('deletefaq');
 
-Route::delete('/destroyfaq/{id}', [PublicController::class, 'destroyfaq'])->name('destroyfaq');
+Route::delete('/destroyfaq/{id}', [AdminController::class, 'destroyfaq'])->name('destroyfaq');
 
-Route::get('/modificafaq', [PublicController::class, 'modificafaq'])->name('modificafaq');
+Route::get('/modificafaq', [AdminController::class, 'modificafaq'])->name('modificafaq');
 
-Route::get('/updatefaq/{id}', [PublicController::class, 'updatefaq'])->name('updatefaq');
+Route::get('/updatefaq/{id}', [AdminController::class, 'updatefaq'])->name('updatefaq');
 
-Route::put('/modifyfaq/{id}', [PublicController::class, 'modifyfaq'])->name('modifyfaq');
+Route::put('/modifyfaq/{id}', [AdminController::class, 'modifyfaq'])->name('modifyfaq');
 /*------------------------------------------------------------------------------------------------------------------------*/
 
 
 /*CUD Azienda----------------------------------------------------------------------------------------------------------------*/
-Route::get('/insertazienda', [AmministratoreController::class, 'insertazienda'])->name('insertazienda');
+Route::get('/insertazienda', [AdminController::class, 'insertazienda'])->name('insertazienda');
 
-Route::post('/storeazienda', [AmministratoreController::class, 'storeazienda'])->name('storeazienda');
+Route::post('/storeazienda', [AdminController::class, 'storeazienda'])->name('storeazienda');
 
-Route::get('/deleteazienda', [AmministratoreController::class, 'deleteazienda'])->name('deleteazienda');
+Route::get('/deleteazienda', [AdminController::class, 'deleteazienda'])->name('deleteazienda');
 
-Route::delete('/destroyazienda/{id}', [AmministratoreController::class, 'destroyazienda'])->name('destroyazienda');
+Route::delete('/destroyazienda/{id}', [AdminController::class, 'destroyazienda'])->name('destroyazienda');
 
-Route::get('/modificaazienda', [AmministratoreController::class, 'modificaazienda'])->name('modificaazienda');
+Route::get('/modificaazienda', [AdminController::class, 'modificaazienda'])->name('modificaazienda');
 
-Route::get('/updateazienda/{id}', [AmministratoreController::class, 'updateazienda'])->name('updateazienda');
+Route::get('/updateazienda/{id}', [AdminController::class, 'updateazienda'])->name('updateazienda');
 
-Route::put('/modifyazienda/{id}', [AmministratoreController::class, 'modifyazienda'])->name('modifyazienda');
+Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->name('modifyazienda');
 /*------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -122,7 +122,7 @@ Route::put('/modifyazienda/{id}', [AmministratoreController::class, 'modifyazien
 
    // });
     
-Route::get('/amministratore', [AmministratoreController::class, 'homeadmin'])->name('amministratore');
+Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
 
 Route::get('/homeuser', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showHomeUser'])->name('homeuser');
 require __DIR__.'/auth.php';
