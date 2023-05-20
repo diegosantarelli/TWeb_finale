@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller {
                 return redirect()->route('homemembro');
                 break;
             case 3:
-                return redirect()->route('amministratore');
+                return redirect()->route('homeuser');
                 break;
             default:
                 return redirect('/');

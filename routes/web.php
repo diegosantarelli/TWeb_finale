@@ -5,7 +5,6 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
-use App\Http\Controllers\AmministratoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,7 +121,7 @@ Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->na
 
    // });
     
-Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
+// Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
 
 Route::get('/homeuser', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showHomeUser'])->name('homeuser');
 require __DIR__.'/auth.php';
