@@ -9,9 +9,9 @@
         <br>
         
         @foreach($faqs as $faq)
-        <form method="GET" action="{{route('updatefaq', [$faq->id])}}">
-        @csrf
-        @method('GET')
+        {{ Form::open(array('route' => ['updatefaq', $faq->id], 'method' => 'GET')) }}
+@method('GET')
+{{ Form::token() }}
         <details>
                 <summary>
                 {{$faq->Domanda}} 
@@ -24,8 +24,8 @@
         </details>
         
   
-  <button type="submit" >Modifica la domanda</button>
-</form>
+        {{ Form::submit('Modifica faq', ['class' => 'btn btn-primary']) }}
+            {{ Form::close() }}  
         @endforeach
         
 </section>

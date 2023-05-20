@@ -9,6 +9,7 @@ use App\Models\Azienda;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewAziendaRequest;
+use App\Http\Requests\NewFaqRequest;
 
 
 class AdminController extends Controller {
@@ -64,7 +65,7 @@ class AdminController extends Controller {
         return view('insertazienda');
     }
 
-    public function storeazienda(Request $request){
+    public function storeazienda(NewAziendaRequest $request){
         $azienda = new Azienda;
         //bisogna controllare tramite form che tutti i campi siano inseriti
         
@@ -119,7 +120,7 @@ class AdminController extends Controller {
     }
 
 
-    public function storefaq(Request $request){
+    public function storefaq(NewFaqRequest $request){
         
         $faq = new Faq;
         if (isset($request->Domanda)&&isset($request->Risposta)){
@@ -155,7 +156,7 @@ class AdminController extends Controller {
         $faq=Faq::all()->where('id',$id)->first();
         return view('modifyfaq')->with('faq',$faq);
     }
-    public function modifyfaq(Request $request, $id){
+    public function modifyfaq(NewFaqRequest $request, $id){
         $faq = $faq=Faq::all()->where('id',$id)->first();
         $faq->Domanda=$request->input('Domanda');
         $faq->Risposta=$request->input('Risposta');

@@ -9,9 +9,9 @@
         <br>
         
         @foreach($faqs as $faq)
-        <form method="POST" action="{{route('destroyfaq', [$faq->id])}}">
-        @csrf
-        @method('DELETE')
+        {{ Form::open(array('route' => ['destroyfaq', $faq->id], 'method' => 'POST')) }}
+@method('DELETE')
+{{ Form::token() }}
         <details>
                 <summary>
                 {{$faq->Domanda}} 
@@ -23,9 +23,9 @@
                 
         </details>
         
-  
-  <button type="submit" >Elimina la domanda</button>
-</form>
+        {{ Form::submit('Elimina faq', ['class' => 'btn btn-primary']) }}
+            {{ Form::close() }}  
+
         @endforeach
         
 </section>

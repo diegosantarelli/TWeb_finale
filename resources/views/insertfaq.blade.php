@@ -3,10 +3,27 @@
 @section('content')
 
 <link rel="stylesheet" type="text/css" href="css/Faq.css">
-<form action="{{route('storefaq')}}" method="POST">
-@csrf
-    <label for="Domanda">Domanda:</label><input type="text" name="Domanda" placeholder="Inserisci una domanda">
-    <label for="Risposta">Risposta:</label><input type="text" name="Risposta" placeholder="Inserisci una risposta">
-    <button type="submit">Aggiungi faq</button>
-</form>
+{{ Form::open(array('route' => 'storefaq')) }}
+{{ Form::token() }}
+{{ Form::label('Domanda', 'Domanda') }}
+    {{ Form::text('Domanda', null, ['class' => 'form-control']) }}<br>
+    @if ($errors->first('Domanda'))
+                <ul class="errors">
+                    @foreach ($errors->get('Domanda') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+
+    {{Form::label('Risposta', 'Risposta') }}
+    {{ Form::text('Risposta', null, ['class' => 'form-control']) }}<br>
+    @if ($errors->first('Risposta'))
+                <ul class="errors">
+                    @foreach ($errors->get('Risposta') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                {{ Form::submit('Crea faq', ['class' => 'btn btn-primary']) }}
+    {{ Form::close() }}
 @endsection
