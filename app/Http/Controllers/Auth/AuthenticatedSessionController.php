@@ -31,10 +31,10 @@ class AuthenticatedSessionController extends Controller {
 
         $request->session()->regenerate();
 
-        $user = Auth::user();
-        $livello = $user->livello;
+        
+        $role = auth()->user()->role;
 
-        switch ($livello) {
+        switch ($role) {
             case 1:
                 return redirect()->route('homeuser');
                 break;

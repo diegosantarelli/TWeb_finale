@@ -32,7 +32,7 @@ class User extends Authenticatable
         'email',
         'età',
         'genere',
-        'livello',
+        'role',
         'nome',
         'password',
         'possibilità_abbinamento',
@@ -82,8 +82,8 @@ class User extends Authenticatable
     }
     
     /* Funzione per verificare il livello di utenza dell'utente loggato */
-    public function hasLevel($livello) {
-        $livello = (array)$livello;
-        return in_array($this->livello, $livello);
+    public function hasRole($role) {
+        $role = (array)$role;
+        return in_array($this->role, $role);
     }
 }
