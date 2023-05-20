@@ -20,9 +20,11 @@
         
 </section>
 
+@can('isAdmin')
 <a href="{{route('insertfaq')}}">inserisci una faq</a>
 <a href="{{route('deletefaq')}}">elimina una faq</a>
 <a href="{{route('modificafaq')}}">modifica una faq</a>
+@endcan
     
 @endsection
 
