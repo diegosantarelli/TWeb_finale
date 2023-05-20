@@ -128,3 +128,5 @@ Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->na
 
 Route::get('/homeuser', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showHomeUser'])->name('homeuser');
 require __DIR__.'/auth.php';
+
+Route::get('/profile', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
