@@ -35,13 +35,13 @@ class AuthenticatedSessionController extends Controller {
         $role = auth()->user()->role;
 
         switch ($role) {
-            case 1:
+            case 'user':
                 return redirect()->route('homeuser');
                 break;
-            case 2:
+            case 'staff':
                 return redirect()->route('homemembro');
                 break;
-            case 3:
+            case 'admin':
                 return redirect()->route('amministratore');
                 break;
             default:
