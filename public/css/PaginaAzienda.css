@@ -1,5 +1,6 @@
 
 .product {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,4 +31,30 @@ img {
   margin-bottom: 20px;
 }
 
+=======
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    color: #fff;
+  }
+
+  .imagefrm {
+    width: 30%;
+  }
+  
+  .product-info {
+    max-width: 100%;
+  }
+  
+  .product-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .product-info p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+>>>>>>> ee72755f58c8af2156482a1070effa4a3dbe935e
 
