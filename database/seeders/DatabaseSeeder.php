@@ -33,7 +33,6 @@ class DatabaseSeeder extends Seeder
             'PercentualeSconto'=>'10',
             'Luogo'=>'Negozio fisico',
             'Modalità'=>'Utilizzo online',
-            'PrezzoScontato'=>100,
             'Evidenza'=>'no',
             'image' => 'Tiragraffi.png'],
 
@@ -46,7 +45,6 @@ class DatabaseSeeder extends Seeder
              'PercentualeSconto'=>'40',
              'Luogo'=>'Negozio fisico',
              'Modalità'=>'Utilizzo una sola volta',
-             'PrezzoScontato'=>100,
              'Evidenza'=>'no',
              'image' => 'ipad2022.png'],
 
@@ -59,7 +57,6 @@ class DatabaseSeeder extends Seeder
              'PercentualeSconto'=>'50',
              'Luogo'=>'Telefono o chiamata',
              'Modalità'=>'Utilizzo limitato nel tempo',
-             'PrezzoScontato'=>100,
              'Evidenza'=>'sì',
              'image' =>'iphone13.png'],
 
@@ -72,7 +69,6 @@ class DatabaseSeeder extends Seeder
              'PercentualeSconto'=>'60',
              'Luogo'=>'Evento',
              'Modalità'=>'Utilizzo online',
-             'PrezzoScontato'=>100,
             'Evidenza'=>'sì',
             'image' => 'AirForce.png'],
         ]);

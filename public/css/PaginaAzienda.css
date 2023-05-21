@@ -1,5 +1,5 @@
 
-.product {
+.company {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,25 +7,25 @@
   color: #fff;
 }
 
-img {
+.company img {
   height: 300px;
   width: 300px;
 }
 
-.product .image{
+.company .image{
   margin-right: 10%;
 }
 
-.product-info {
+.company-info {
   max-width: 60%;
 }
 
-.product-info h2 {
+.company-info h2 {
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-.product-info p {
+.company-info p {
   font-size: 20px;
   margin-bottom: 20px;
 }

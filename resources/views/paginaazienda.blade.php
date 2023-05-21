@@ -5,17 +5,17 @@
     
 
   
-<section class="product">
+<section class="company">
   <div class="image">
      @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $selAzienda->image])
     </div>
 
-  <div class="product-info">
+  <div class="company-info">
     <h2>{{$selAzienda->Nome}}</h2>
 
     <p> Sede: {{$selAzienda->Sede}}</p>
 
-    <p> Tipologia: {{$selAzienda->Tipologia}}</p>
+    <p> Settore: {{$selAzienda->Tipologia}}</p>
 
     <p> Ragione sociale: {{$selAzienda->RagioneSociale}}</p>
 

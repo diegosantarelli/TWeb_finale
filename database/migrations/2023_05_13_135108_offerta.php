@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('Oggetto',100);
             $table->string('Azienda',50);
             $table->float('Prezzo')->unsigned();
-            $table->float('PrezzoScontato')->unsigned();
+           // $table->float('PrezzoScontato')->unsigned();
             $table->tinyInteger('PercentualeSconto')->unsigned();
             $table->string('Luogo',50);
             $table->string('Modalità',50);

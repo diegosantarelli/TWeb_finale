@@ -11,8 +11,13 @@
     margin-right: 50px;
   }
   
-  .product-image img {
-    max-width: 100%;
+  img {
+    height: 300px;
+    width: 300px;
+  }
+  
+  .product .image{
+    margin-right: 10%;
   }
   
   .product-info {
