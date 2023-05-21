@@ -89,6 +89,7 @@ class RegisteredUserController extends Controller
         // Imposta un messaggio di successo nella sessione
         session(['success' => 'Registrazione completata con successo!']);
         dd(session('success'));
+        
         return redirect(RouteServiceProvider::HOME);
 
     }

@@ -3,20 +3,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 100px;
     color: #fff;
   }
-  
-  .product-image {
-    margin-right: 50px;
-  }
-  
-  .product-image img {
-    max-width: 100%;
+
+  .imagefrm {
+    width: 30%;
   }
   
   .product-info {
-    max-width: 60%;
+    max-width: 100%;
   }
   
   .product-info h2 {

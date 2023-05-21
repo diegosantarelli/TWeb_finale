@@ -75,6 +75,7 @@ class AuthenticatedSessionController extends Controller {
 
         return redirect('/');
     }
+    /*
 
     public function showProfile()
     {
@@ -82,6 +83,6 @@ class AuthenticatedSessionController extends Controller {
 
         return view('profile', ['user' => $user]);
     }
-
+    */
 
 }
