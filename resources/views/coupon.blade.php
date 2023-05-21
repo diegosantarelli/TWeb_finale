@@ -20,17 +20,17 @@
 
         <p> Azienda: {{$selOfferta->Azienda}}</p>
 
-        <p> Scadenza: {{$selOfferta->Scadenza}}</p>
+        <p> Scadenza: {{$selOfferta->Scadenza}} ( @include('helpers/ExpirationHelper', ['expirationDate' => $selOfferta->Scadenza])
+)</p>
+
+
 
         <p class="prezzo_originale"> Prezzo originale: {{$selOfferta->Prezzo}}€</p>
 
         <p> Percentuale sconto: {{$selOfferta->PercentualeSconto}}%</p>
 
-        @php
-            $prezzoScontato = $selOfferta->Prezzo - ($selOfferta->Prezzo * $selOfferta->PercentualeSconto / 100);
-        @endphp
 
-        <p class="prezzo_scontato"> Prezzo scontato: {{$prezzoScontato}}€</p>
+        @include('helpers/DiscountedPrice', ['prezzo' => $selOfferta->Prezzo, 'sconto' => $selOfferta->PercentualeSconto])
 
         <p> Luogo di fruizione: {{$selOfferta->Luogo}}</p>
 
