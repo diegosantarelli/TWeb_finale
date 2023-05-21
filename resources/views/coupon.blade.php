@@ -27,7 +27,7 @@
 
         <p class="prezzo_originale"> Prezzo originale: {{$selOfferta->Prezzo}}€</p>
 
-        <p> Percentuale sconto: {{$selOfferta->PercentualeSconto}}%</p>
+        <p> Percentuale sconto: -{{$selOfferta->PercentualeSconto}}%</p>
 
 
         @include('helpers/DiscountedPrice', ['prezzo' => $selOfferta->Prezzo, 'sconto' => $selOfferta->PercentualeSconto])
