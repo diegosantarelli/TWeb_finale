@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use Notifiable;
 
     protected $primaryKey = 'username';
 
@@ -70,16 +70,6 @@ class User extends Authenticatable
      * @var bool
      */
     public $timestamps = false;
-
-    public function getAuthIdentifier()
-    {
-        return $this->getKey();
-    }
-
-    public function getAuthPassword()
-    {
-        return $this->password;
-    }
 
     /* Funzione per verificare il livello di utenza dell'utente loggato */
     public function hasRole($role) {
