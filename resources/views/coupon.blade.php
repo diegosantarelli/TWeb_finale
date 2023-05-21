@@ -2,7 +2,7 @@
 @extends('public')
 @section('content')
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/PaginaCoupon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/PaginaOfferta.css')}}">
     
 
   
@@ -36,9 +36,29 @@
 
         <p> Modalità di fruizione: {{$selOfferta->Modalità}}</p>
 
+        @guest
+        <div class=coupon-accedi>
+          Per ottenere il coupon <a href="{{ route('login') }}"> Accedi </a>
+        </div>
+        @endguest
+
+        @can('isUser')
         <div>
             <a href="{{ route('login') }}" class="button">Ottieni Coupon</a>
         </div>
+        @endcan
+
+        @can('isAdmin')
+        <div class=coupon-accedi>
+          Non puoi ottenere il coupon come Admin!
+        </div>
+        @endcan
+        
+        @can('isStaff')
+        <div class=coupon-accedi>
+          Non puoi ottenere il coupon come Membro dello Staff!
+        </div>
+        @endcan
 
     </div>
 </section>

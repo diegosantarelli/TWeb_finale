@@ -3,8 +3,10 @@
 @section('content')
 
 <link rel="stylesheet" type="text/css" href="css/Faq.css">
+<link rel="stylesheet" type="text/css" href="css/ModifyFaq.css">
 
-<section id="faq_section">
+
+<section class="faq_section">
         <h2 class="titolo">DOMANDE FREQUENTI</h2>
         <br>
         
