@@ -12,7 +12,7 @@
     @foreach($aziende as $azienda)
 
             <a class="card" href="">
-                <img src="{{ asset('img/amazon.png') }}?t={{ time() }}" >
+                <img src="{{ asset('img/product/amazon.png') }}?t={{ time() }}" >
             <div class="container_card">
                 <p>{{$azienda->Nome}}</p>
             </div>

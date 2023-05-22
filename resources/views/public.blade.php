@@ -40,10 +40,10 @@
             <li><a href="{{route('login')}}" class="accedi">Accedi</a></li>
             <li><a href="{{route('register')}}" class="registrati">Registrati</a></li>
             @endguest
-            
+
             @auth
                 @if(Auth::user()->can('isAdmin'))
-                    <li class="center"><a href="#">Gestione</a></li>
+                    <li class="center"><a href="{{route('amministratore')}}">Gestione</a></li>
                 @endif
             @endauth
 

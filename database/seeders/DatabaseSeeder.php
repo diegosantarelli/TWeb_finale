@@ -110,20 +110,20 @@ class DatabaseSeeder extends Seeder
                 'username' => 'membrostaff',
                 'id' => ''
             ],
-            /*[
-                'cognome' => 'Admin',
+            [
+                'cognome' => 'prova',
                 'email' => 'admin@gmail.com',
                 'età' => 42,
                 'genere' => 'Uomo',
                 'role' => 'admin',
-                'nome' => 'Admin',
+                'nome' => 'prova',
                 'password' => Hash::make('14'),
                 'possibilità_abbinamento' => 0,
                 'residenza' => 'Ancona',
                 'telefono' => '3409139863',
                 'username' => 'admin',
                 'id' => ''
-            ], */
+            ],
             [
                 'cognome' => 'Staff',
                 'email' => 'membro@gmail.com',
