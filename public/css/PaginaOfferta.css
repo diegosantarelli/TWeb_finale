@@ -11,8 +11,13 @@
     margin-right: 50px;
   }
   
-  .product-image img {
-    max-width: 100%;
+  img {
+    height: 300px;
+    width: 300px;
+  }
+  
+  .product .image{
+    margin-right: 10%;
   }
   
   .product-info {
@@ -64,4 +69,18 @@
   
   .button:hover {
     background-color: rgb(70, 150, 128);
+  }
+
+  .coupon-accedi{
+    margin-top: 35px;
+    color: #fff;
+  }
+
+  .coupon-accedi a{
+    color: rgb(88,185,157);
+    text-decoration: none;
+  }
+
+  .coupon-accedi a:hover{
+    text-decoration: underline;
   }

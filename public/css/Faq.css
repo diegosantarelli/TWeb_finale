@@ -3,7 +3,7 @@
   margin-top: 140px;
  }
 
-#faq_section {
+.faq_section {
   margin-top: 30px;
   margin-bottom: 20px;
   width: 100%;
@@ -38,4 +38,29 @@ summary {
 
 p{
   color:#bbbbbb;
+}
+
+.gestione-faq{
+  
+  height: 50px;
+  background-color: #24262b;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+
+
+.gestione-faq a{
+  
+  padding: 10px;
+  text-align: center;
+  margin: 5px 10px;
+  text-decoration: none;
+  color: #bbb;
+}
+
+.gestione-faq a:hover{
+  color:#fff;
+  text-decoration: underline;
 }

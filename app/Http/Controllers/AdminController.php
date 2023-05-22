@@ -167,10 +167,10 @@ class AdminController extends Controller {
     }
 /* FAQ-------------------------------------------------------------------------------------------------*/
 
-    public function showProfile()
+   /* public function showProfile()
     {
         $user = Auth::user();
 
         return view('profile', ['user' => $user]);
-    }
+    }*/
 }

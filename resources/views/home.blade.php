@@ -75,6 +75,8 @@ dots[slideIndex-1].className += " active";
 <div id="catalogo">
 
     <h3 class="card_title">Offerte in evidenza</h3>
+
+    <div class="container-card">
         @foreach($offerte as $offerta)
         <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
                 <h3>{{$offerta->Azienda}}</h3>
@@ -88,12 +90,16 @@ dots[slideIndex-1].className += " active";
             </a>
         @endforeach
 
-            <a class="card-empty" href="{{route('catalogo')}}">
+            <a class="card" href="{{route('catalogo')}}">
 
-               <h4> Visualizza tutte le offerte </h4>
+               <h4> Catalogo </h4>
+                  <img src="img/catalogo.png">
+                  
+                    <p >Visualizza tutte le offerte disponibili sul nostro sito </p>
+                  
 
             </a>
-
+</div>
 </div>
 
 </div>
