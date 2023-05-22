@@ -1,9 +1,8 @@
 @extends('public')
 
 @section('content')
-
-<link rel="stylesheet" type="text/css" href="css/Faq.css">
-<link rel="stylesheet" type="text/css" href="css/ModificaFaq.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/Faq.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/ModificaFaq.css')}}">
 
 <section id="faq_section">
         <h2 class="titolo">DOMANDE FREQUENTI</h2>
