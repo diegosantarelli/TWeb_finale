@@ -15,16 +15,9 @@ class userController extends Controller {
     }
 
 
-    /* public function __construct() {
-        $this->middleware('can:isUser');
-    } */
 
-    protected $_userModel;
 
-    public function __construct() {
-        $this->_userModel = new User;
-        $this->middleware('can:isUser');
-    }
+  
 
 
 

@@ -104,30 +104,6 @@ class PublicController extends Controller
         return view('coupon')->with('selOfferta',$selOfferta);
     }
 
-    public function showSignIn(): View {
-        return view('registrazione');
-    }
-/*
-    public function search(Request $request)
-    {
-        $query = $request->input('query');
-        $keyword = $request->input('keyword');
-        
-        $offerte = Offerta::query();
-        
-        if ($query) {
-            $offerte->where('Oggetto', 'LIKE', "%$query%");
-        }
-        
-        if ($keyword) {
-            $offerte->where('Azienda', 'LIKE', "%$keyword%");
-        }
-        
-        $results = $offerte->get();
-        
-        return view('catalogo', ['offerte' => $results]);
-    }
-    */
     public function search(Request $request)
     {
         $oggetto = $request->input('oggetto');

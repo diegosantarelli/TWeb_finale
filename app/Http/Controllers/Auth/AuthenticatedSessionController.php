@@ -53,9 +53,6 @@ class AuthenticatedSessionController extends Controller {
          * return redirect()->intended(RouteServiceProvider::HOME);
          */
 
-        $id = auth()->user()->id;
-        return redirect()->route('profile', ['id' => $id]);
-
     }
 
 /*
@@ -77,13 +74,6 @@ class AuthenticatedSessionController extends Controller {
         $request->session()->regenerateToken();
 
         return redirect('/');
-    }
-
-
-    public function showProfile($id)
-    {
-        $user = user::find($id);
-        return view('profile', ['user' => $user]);
     }
 
 }
