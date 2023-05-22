@@ -1,4 +1,5 @@
 @extends('public')
+
 @section('content')
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
@@ -44,6 +45,7 @@
                 <p style="font-size:30px;">-{{$offerta->PercentualeSconto}}%</p>
             </div>
             </a>
+            
         @endforeach
     @endif
         
@@ -63,12 +65,5 @@
             -->
             @endforeach
     </div>
-
-
-
-   
-
-    
-
 
  @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="css/Faq.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/Faq.css')}}">
 
 <section id="faq_section">
         <h2 class="titolo">DOMANDE FREQUENTI</h2>
@@ -23,7 +23,7 @@
                 
         </details>
         
-        {{ Form::submit('Elimina faq', ['class' => 'btn btn-primary']) }}
+        {{ Form::submit('Elimina faq', ['class' => 'btn-delete']) }}
             {{ Form::close() }}  
 
         @endforeach

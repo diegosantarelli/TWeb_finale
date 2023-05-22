@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Azienda;
 use App\Models\Offerta;
 use App\Models\Faq;
+use App\Models\Catalog;
 use Illuminate\Http\Request;
 use QrCode;
 use App\Models\Catalog;
@@ -187,5 +188,12 @@ class PublicController extends Controller
         $qrCode = QrCode::size(300)->generate($data);
 
         return view('stampacoupon', compact('qrCode'));
+    }
+
+    public function paginate_index()
+    {
+        $offerta_pagin = Catalog::paginate(10); // Ottieni le offerte paginate, 10 per pagina
+
+        return view('catalogo', compact('offerta_pagin'));
     }
 }

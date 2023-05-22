@@ -84,8 +84,7 @@ CSS SLIDESHOW
   margin: 10px;
   border-radius: 15px;
   color:#ffffff;
-  cursor:pointer;
-
+  cursor: pointer;
 }
 
 
@@ -98,10 +97,4 @@ CSS SLIDESHOW
   box-shadow: 0 16px 32px 0 rgba(133, 127, 127, 0.2);
   color: #fff;
   background-color: #24262b;
-}
-
-
-.container-card{
-  display:flex;
-  justify-content: center;
 }
