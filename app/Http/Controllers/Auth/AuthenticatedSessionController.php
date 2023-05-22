@@ -76,4 +76,18 @@ class AuthenticatedSessionController extends Controller {
         return redirect('/');
     }
 
+
+    public function showProfile($id)
+    {
+        dd($id);
+        $user = User::find($id);
+      /*if (!$user) {
+            // L'utente con l'ID specificato non esiste, puoi gestire l'errore come preferisci
+            abort(404);
+        }*/
+
+        return view('profile', ['user' => $user]);
+    }
+
+
 }
