@@ -52,10 +52,6 @@ class AuthenticatedSessionController extends Controller {
          * Redirezione su diverse Home Page in base alla classe d'utenza.
          * return redirect()->intended(RouteServiceProvider::HOME);
          */
-
-        $id = auth()->user()->id;
-        return redirect()->route('profile', ['id' => $id]);
-
     }
 
 /*
@@ -82,8 +78,15 @@ class AuthenticatedSessionController extends Controller {
 
     public function showProfile($id)
     {
-        $user = user::find($id);
+        dd($id);
+        $user = User::find($id);
+      /*if (!$user) {
+            // L'utente con l'ID specificato non esiste, puoi gestire l'errore come preferisci
+            abort(404);
+        }*/
+
         return view('profile', ['user' => $user]);
     }
+
 
 }

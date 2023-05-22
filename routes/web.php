@@ -126,8 +126,9 @@ Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->na
 
 Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
 
-Route::get('/homeuser', [UserController::class, 'showHomeUser'])->name('homeuser');
+Route::get('/homeuser', [UserController::class, 'showHomeUser'])->name('homeuser')->middleware('can:isAdmin');
 
 require __DIR__.'/auth.php';
 
-Route::get('/profile/{id}', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
+Route::get('/profile/{id}', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
+
