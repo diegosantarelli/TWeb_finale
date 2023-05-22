@@ -1,7 +1,7 @@
 @extends('public')
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="css/Home.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/Home.css')}}">
 
 <div class="slideshow-container">
 

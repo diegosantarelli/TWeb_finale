@@ -1,8 +1,7 @@
 @extends('public')
 
 @section('content')
-
-<link rel="stylesheet" type="text/css" href="css/Faq.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/Faq.css')}}">
 
 @can('isAdmin')
 <div class="gestione-faq">
