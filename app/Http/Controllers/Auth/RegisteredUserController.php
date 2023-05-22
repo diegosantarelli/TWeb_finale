@@ -33,7 +33,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-
+        
+/*
         $request->validate([
             'nome' => ['required', 'string','min:2', 'max:50' ],
             'cognome' => ['required', 'string','min:2','max:50'],
@@ -46,7 +47,7 @@ class RegisteredUserController extends Controller
             'residenza' => ['required', 'string', 'max:255'],
             'telefono' => ['required', 'numeric', 'digits_between:1,15'],
             'età' => ['required', 'integer', 'min:1', 'max:100'],
-            'id' => ['nullable','string']
+            //'id' => ['nullable','string']
         ]);
 
         /* Verifica se 'livello' è stato compilato, altrimenti imposta a null
@@ -64,6 +65,8 @@ class RegisteredUserController extends Controller
             $request->merge(['id' => null]);
         } */
 
+        
+
         $user = User::create([
             'nome' => $request->input('nome'),
             'cognome' => $request->input('cognome'),
@@ -71,12 +74,12 @@ class RegisteredUserController extends Controller
             'username' => $request->input('username'),
             'password' => Hash::make($request->input('password')),
             'genere' => $request->input('genere'),
-            'role' => $request->input('role')? $request->input('role') : 'user',
-            'possibilità_abbinamento' => $request->input('possibilità_abbinamento') ? $request->input('possibilità_abbinamento') : null,
+            //'role' => $request->input('role')? $request->input('role') : 'user',
+            //'possibilità_abbinamento' => $request->input('possibilità_abbinamento') ? $request->input('possibilità_abbinamento') : null,
             'residenza' => $request->input('residenza'),
             'telefono' => $request->input('telefono'),
             'età' => $request->input('età'),
-            'id' => $request->input('id') ? $request->input('id') : null,
+          //'id' => $request->input('id') ? $request->input('id') : null,
         ]);
 
 
@@ -87,8 +90,8 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         // Imposta un messaggio di successo nella sessione
-        session(['success' => 'Registrazione completata con successo!']);
-        dd(session('success'));
+       /* session(['success' => 'Registrazione completata con successo!']);
+        dd(session('success'));*/
         
         return redirect(RouteServiceProvider::HOME);
 
