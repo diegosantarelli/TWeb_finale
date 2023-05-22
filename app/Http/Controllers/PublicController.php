@@ -180,7 +180,7 @@ class PublicController extends Controller
         
         return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
         
-    }*/
+    }
 
 
     public function showStampaCoupon(): View{
@@ -202,31 +202,5 @@ class PublicController extends Controller
         return view('catalogo', compact('offerta_pagin'));
     }
 
-    public function search(Request $request)
-    {
-        $oggetto = $request->input('oggetto');
-        $azienda = $request->input('azienda');
-        
-        if(isset($oggetto)&&($azienda==null))
-        {
-            $results = Offerta::where('Oggetto', 'like', '%' . $oggetto . '%')->get();
-        }
-        else if(isset($azienda)&&($oggetto==null))
-        {
-            $results = Offerta::where('Azienda', 'like', '%' . $azienda . '%')->get();
-        }
-
-        else if(isset($oggetto)&&(isset($azienda))) {
-            $results = Offerta::where('Azienda', 'like', '%' . $azienda . '%')->where('Oggetto', 'like', '%' . $oggetto . '%')->get();
-        }
-        else{
-            $results = Offerta::all();
-        }
-        
-
-        $categorie = Offerta::all()->pluck('Categoria')->unique();  
-        
-        return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
-        
-    }
+    
 }
