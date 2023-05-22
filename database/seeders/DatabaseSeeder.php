@@ -94,7 +94,6 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Roseto',
                 'telefono' => '3409139863',
                 'username' => 'simone',
-                'id' => ''
             ],
             [
                 'cognome' => 'Staff',
@@ -108,7 +107,6 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Martinsicuro',
                 'telefono' => '3758492345',
                 'username' => 'membrostaff',
-                'id' => ''
             ],
             [
                 'cognome' => 'prova',
@@ -122,7 +120,6 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Ancona',
                 'telefono' => '3409139863',
                 'username' => 'admin',
-                'id' => ''
             ],
             [
                 'cognome' => 'Staff',
@@ -136,7 +133,6 @@ class DatabaseSeeder extends Seeder
                 'residenza' => 'Martinsicuro',
                 'telefono' => '3758492345',
                 'username' => 'dieghez',
-                'id' => ''
             ]
         ]);
 
