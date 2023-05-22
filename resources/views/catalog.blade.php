@@ -1,82 +1,57 @@
-@extends('layouts.public')
-
-@section('title', 'Catalogo Prodotti')
-
-<!-- inizio sezione prodotti -->
+@extends('public')
 @section('content')
-<div id="content">
-  @isset($products)
-    @foreach ($products as $product)
-    <div class="prod">
-        <div class="prod-bgtop">
-            <div class="prod-bgbtm">
-                <div class="oneitem">
-                    <div class="image">
-                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $product->image])
-                    </div>
-                    <div class="info">
-                        <h1 class="title">Prodotto: {{ $product->name }}</h1>
-                        <p class="meta">Descrizione Breve: {{ $product->descShort }}</p>
-                    </div>
-                    <div class="pricebox">
-                        @include('helpers/productPrice')
-                    </div>
-                </div>
-                <div class="entry">
-                    <p>Descrizione Estesa: {!! $product->descLong !!}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
 
-    <div id="content">
-    <div class="prod">
-        <div class="prod-bgtop">
-            <div class="prod-bgbtm">
-                <div class="oneitem">
-                 
-                    <div class="info">
-                        <h1 class="title">PROVA</h1>
-                    </div>
-                 
-                </div>
-            </div>
-        </div>
+<link rel="stylesheet" type="text/css" href="{{asset('css/Catalogo.css')}}">
+    <div id="container">
+
+    <div class="search_container">
+    <form action="{{ route('search')}}" method="GET">
+            <label for="oggetto">Oggetto:</label><input id="obj" type="text" name="oggetto" placeholder="Inserisci l'oggetto dell'offerta">
+            <label for="azienda">Azienda:</label><input id="azienda" type="text" name="azienda" placeholder="Inserisci l'azienda dell'offerta">
+            <button id="button" type="submit">Cerca</button>
+    </form> 
+    </div>
+    
+
+
+    <div id="categorie">
+        <h3>Scegli una categoria</h3>
+        <br>
+            @foreach($categorie as $categoria)
+            <label>
+            <input type="radio" name="categoria" value="{{ $categoria }}" onclick="window.location.href='{{ route('catalogo', [$categoria]) }}'" 
+            @isset($catselezionata){{$categoria == $catselezionata ? 'checked' : ''}} @endisset>
+            
+            {{ $categoria }}
+            </label><br>
+            @endforeach
     </div>
 
-    <!--Paginazione-->
-    @include('pagination.paginator', ['paginator' => $products])
 
-  @endisset()
-</div>
+   <div id="catalogo">
+        <h2>Offerte</h2>
+        @if (count($offerte) == 0)
+    <p>Siamo spiacenti ma i parametri da lei selezionati non hanno prodotto nessuno risultato</p>
+    @else
+    @foreach($offerte as $offerta)
+            <a class="card" href="{{route('coupon', [$offerta->IdOfferta])}}">
+                <h3>{{$offerta->Azienda}}</h3>
+                <div class="image">
+                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $offerta->image])
+                    </div>
+            <div class="container_card">
+                <p>{{$offerta->Oggetto}}</p>
+                <p style="font-size:30px;">-{{$offerta->PercentualeSconto}}%</p>
+            </div>
+            </a>
+        @endforeach
+        @include('pagination.paginator', ['paginator' => $offerte])
+    @endif
+        
+   
+    </div>
 
-<!-- fine sezione prodotti -->
-
-<div id="sidebar">
-    <ul>
-        <li>
-            <h2>Categorie</h2>
-            <ul>
-                @foreach ($topCategories as $category)
-                <li><a href="{{ route('catalog2', [$category->catId]) }}">{{ $category->name }}</a><span>{{ $category->desc }}</span></li>
-                @endforeach
-            </ul>
-        </li>
-
-        @isset($selectedTopCat)
-        <li>
-            <h2>In {{ $selectedTopCat->name }}</h2>
-            <ul>
-                @foreach ($subCategories as $subCategory)
-                <li><a href="{{ route('catalog3', [$selectedTopCat->catId, $subCategory->catId]) }}">{{ $subCategory->name }}</a><span>{{ $subCategory->desc }}</span></li>
-                @endforeach
-            </ul>
-        </li>
-        @endisset
-    </ul>
-</div>
-<!-- fine sezione laterale -->
 @endsection
+
 
 

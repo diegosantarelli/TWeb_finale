@@ -50,7 +50,7 @@ Route::view('/who', 'who')
 Route::get('/', [PublicController::class, 'showHome']) ->name('home');
 
 /* Rotta per la vista 'catalogo' */
-Route::get('/catalogo/{Categoria?}', [PublicController::class, 'showCatalog'])->name('catalogo');
+//Route::get('/catalogo/{Categoria?}', [PublicController::class, 'showCatalog'])->name('catalogo');
 
 /* Rotta per la vista 'faq' */
 Route::get('/faq', [PublicController::class, 'showFaq']) ->name('faq');
@@ -126,9 +126,12 @@ Route::put('/modifyazienda/{id}', [AdminController::class, 'modifyazienda'])->na
 
 Route::get('/amministratore', [AdminController::class, 'homeadmin'])->name('amministratore');
 
-Route::get('/homeuser', [UserController::class, 'showHomeUser'])->name('homeuser')->middleware('can:isAdmin');
+Route::get('/homeuser', [UserController::class, 'showHomeUser'])->name('homeuser');
 
 require __DIR__.'/auth.php';
 
-Route::get('/profile/{id}', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
+Route::get('/profile/{id}', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
 
+
+
+Route::get('/catalog', [PublicController::class, 'showCatalog']) ->name('catalog');

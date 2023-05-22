@@ -4,6 +4,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{asset('css/Info.css')}}">
 
+
 <div id="chisiamo_content">
 <h1>Chi siamo?</h1>
 
