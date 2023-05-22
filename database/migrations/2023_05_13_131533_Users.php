@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('telefono',25);
             $table->string('role',10)->default('user');
             $table->tinyInteger('possibilità_abbinamento', false, true)->default(false);
-            $table->tinyInteger('livello')->nullable()->unsigned()->default('1');
             $table->string('genere',25);
             $table->integer('età')->unsigned()->limit(3);
             $table->string('residenza',25);

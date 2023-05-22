@@ -54,14 +54,14 @@
           <div class="input-radio-button">
           {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
           <div class="radio-buttons">
-          {{ Form::radio('genere', 'male', false, ['id' => 'male']) }}
-                {{ Form::label('male', 'Maschio') }}
+          {{ Form::radio('genere', 'Uomo', false, ['id' => 'uomo']) }}
+                {{ Form::label('Uomo', 'Uomo') }}
 
-          {{ Form::radio('genere', 'female', false, ['id' => 'female']) }}
-                {{ Form::label('female', 'Femmina') }}
+          {{ Form::radio('genere', 'female', false, ['id' => 'donna']) }}
+                {{ Form::label('female', 'Donna') }}
 
-          {{ Form::radio('genere', 'other', false, ['id' => 'other']) }}
-                {{ Form::label('other', 'Altro') }}
+          {{ Form::radio('genere', 'altro', false, ['id' => 'altro']) }}
+                {{ Form::label('altro', 'Altro') }}
           </div>
 
                @if ($errors->first('genere'))
@@ -116,7 +116,7 @@
 
 
           <div class="input-box">
-          {{ Form::label('username', 'Nome Utente', ['class' => 'label-input']) }}
+          {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'input','id' => 'username', 'placeholder' => 'Inserisci il tuo username']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">

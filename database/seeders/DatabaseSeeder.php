@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
                 'username' => 'membrostaff',
                 'id' => ''
             ],
-            [
+            /*[
                 'cognome' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'età' => 42,
@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
                 'telefono' => '3409139863',
                 'username' => 'admin',
                 'id' => ''
-            ],
+            ], */
             [
                 'cognome' => 'Staff',
                 'email' => 'membro@gmail.com',

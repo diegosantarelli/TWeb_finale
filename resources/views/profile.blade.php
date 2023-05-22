@@ -13,7 +13,7 @@
         <p><strong>Telefono:</strong> {{ Auth::user()->telefono }}</p>
         <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
         <p><strong>Username:</strong> {{ Auth::user()->username }}</p>
-        <p><strong>Password:</strong> {{ Auth::user()->username }}</p>
+        <p><strong>Password:</strong> {{ Auth::user()->password }}</p>
         <p><strong>Ruolo:</strong> {{ Auth::user()->role }}</p>
     </div>
 @endsection

@@ -35,7 +35,7 @@ class User extends Authenticatable
         'role',
         'nome',
         'password',
-        //'possibilità_abbinamento',
+        'possibilità_abbinamento',
         'residenza',
         'telefono',
         'username',
