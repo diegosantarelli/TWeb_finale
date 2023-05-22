@@ -66,8 +66,4 @@
             @endforeach
     </div>
 
-    <div class="pagination">
-        {{ $offerta_pagin->links() }}
-    </div>
-
  @endsection
