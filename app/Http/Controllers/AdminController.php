@@ -6,6 +6,7 @@ use App\Models\Admin;
 /*use App\Models\Resources\Product;
 use App\Http\Requests\NewProductRequest;*/
 use App\Models\Azienda;
+use App\Models\Offerta;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewAziendaRequest;
@@ -17,10 +18,10 @@ class AdminController extends Controller {
 
     protected $_adminModel;
 
-    public function __construct() {
+    /*public function __construct() {
         $this->_adminModel = new Admin;
         $this->middleware('can:isAdmin');
-    }
+    } */
 
     /*
     public function index() {
@@ -86,6 +87,17 @@ class AdminController extends Controller {
     }
 
     public function destroyazienda($id){
+        $azienda=Azienda::find($id);
+        $offerte=Offerta::all()->where('Azienda',$azienda->Nome);
+        
+        
+        foreach($offerte as $offerta){
+            
+            
+            $i=$offerta->id;
+            Offerta::destroy($i);
+        }
+        
         Azienda::destroy($id);
         return redirect('amministratore');
     }

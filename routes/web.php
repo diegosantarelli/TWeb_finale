@@ -130,4 +130,4 @@ Route::get('/homeuser', [UserController::class, 'showHomeUser'])->name('homeuser
 
 require __DIR__.'/auth.php';
 
-Route::get('/profile', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
+Route::get('/profile/{id}', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'showProfile'])->name('profile');
