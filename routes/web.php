@@ -134,4 +134,4 @@ Route::get('/profile/{id}', [\App\Http\Controllers\Auth\AuthenticatedSessionCont
 
 
 
-Route::get('/catalog', [PublicController::class, 'showCatalog']) ->name('catalog');
+Route::get('/prova', [PublicController::class, 'showCatalog']) ->name('prova');

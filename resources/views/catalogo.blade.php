@@ -47,6 +47,7 @@
             </a>
             
         @endforeach
+        @include('pagination.paginator', ['paginator' => $offerte])
     @endif
         
    

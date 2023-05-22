@@ -11,8 +11,7 @@ use App\Models\Faq;
 use App\Models\Catalog;
 use Illuminate\Http\Request;
 use QrCode;
-use App\Models\Catalog;
- 
+
 class PublicController extends Controller
 {
     /**
@@ -56,13 +55,19 @@ class PublicController extends Controller
         
     } */
 
-    public function showCatalog($Categoria='Animali'): View {
+   /* public function showCatalog($Categoria='Animali'): View {
         $offerte = $this->_catalogModel->getOffByCat($Categoria);
-        return view('catalog')->with('offerte',$offerte);
+        $categorie=$this->_catalogModel->getCat();
         
+        return view('catalog')->with('offerte',$offerte)->with('categorie',$categorie);
+        
+    } */
 
-        
-        
+    public function showCatalog(): View {
+        $offerte = $this->_catalogModel->getAll();
+        //$categorie = $this->_catalogModel->getCat();
+
+        return view('catalog')->with('offerte',$offerte)/*->with('categorie',$categorie)*/;
         
     } 
 
@@ -148,7 +153,7 @@ class PublicController extends Controller
         
         return view('catalogo', ['offerte' => $results]);
     }
-    */
+    
     public function search(Request $request)
     {
         $oggetto = $request->input('oggetto');
@@ -175,7 +180,7 @@ class PublicController extends Controller
         
         return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
         
-    }
+    }*/
 
 
     public function showStampaCoupon(): View{
@@ -195,5 +200,33 @@ class PublicController extends Controller
         $offerta_pagin = Catalog::paginate(10); // Ottieni le offerte paginate, 10 per pagina
 
         return view('catalogo', compact('offerta_pagin'));
+    }
+
+    public function search(Request $request)
+    {
+        $oggetto = $request->input('oggetto');
+        $azienda = $request->input('azienda');
+        
+        if(isset($oggetto)&&($azienda==null))
+        {
+            $results = Offerta::where('Oggetto', 'like', '%' . $oggetto . '%')->get();
+        }
+        else if(isset($azienda)&&($oggetto==null))
+        {
+            $results = Offerta::where('Azienda', 'like', '%' . $azienda . '%')->get();
+        }
+
+        else if(isset($oggetto)&&(isset($azienda))) {
+            $results = Offerta::where('Azienda', 'like', '%' . $azienda . '%')->where('Oggetto', 'like', '%' . $oggetto . '%')->get();
+        }
+        else{
+            $results = Offerta::all();
+        }
+        
+
+        $categorie = Offerta::all()->pluck('Categoria')->unique();  
+        
+        return view('catalogo')->with('offerte' , $results)->with('categorie',$categorie);
+        
     }
 }
