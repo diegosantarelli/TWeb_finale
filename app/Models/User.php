@@ -21,11 +21,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      *
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ]; */
+    * protected $fillable = [
+    *    'name',
+    *    'email',
+    *    'password',
+    *];
+     */
 
     protected $fillable = [
         'cognome',
@@ -48,6 +49,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'username',
         'password',
         'remember_token',
     ];
@@ -69,7 +71,6 @@ class User extends Authenticatable
      * e 'updated_at' per la gestione automatica delle date di creazione e modifica dei record.
      * @var bool
      */
-    public $timestamps = false;
 
     /* Funzione per verificare il livello di utenza dell'utente loggato */
     public function hasRole($role) {

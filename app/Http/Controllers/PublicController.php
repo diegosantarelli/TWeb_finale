@@ -153,7 +153,7 @@ class PublicController extends Controller
         
         return view('catalogo', ['offerte' => $results]);
     }
-    
+    */
     public function search(Request $request)
     {
         $oggetto = $request->input('oggetto');

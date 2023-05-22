@@ -57,10 +57,10 @@
           {{ Form::radio('genere', 'Uomo', false, ['id' => 'uomo']) }}
                 {{ Form::label('Uomo', 'Uomo') }}
 
-          {{ Form::radio('genere', 'female', false, ['id' => 'donna']) }}
+          {{ Form::radio('genere', 'Donna', false, ['id' => 'donna']) }}
                 {{ Form::label('female', 'Donna') }}
 
-          {{ Form::radio('genere', 'altro', false, ['id' => 'altro']) }}
+          {{ Form::radio('genere', 'Altro', false, ['id' => 'altro']) }}
                 {{ Form::label('altro', 'Altro') }}
           </div>
 
