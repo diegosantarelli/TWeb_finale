@@ -1,9 +1,9 @@
 @extends('public')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('css/Faq.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/ModifyFaq.css')}}">
 
-<link rel="stylesheet" type="text/css" href="css/Faq.css">
-<link rel="stylesheet" type="text/css" href="css/ModifyFaq.css">
 
 
 <section class="faq_section">

@@ -1,8 +1,8 @@
 @extends('public')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('css/Faq.css')}}">
 
-<link rel="stylesheet" type="text/css" href="css/Faq.css">
 {{ Form::open(array('route' => 'storefaq')) }}
 {{ Form::token() }}
 {{ Form::label('Domanda', 'Domanda') }}
