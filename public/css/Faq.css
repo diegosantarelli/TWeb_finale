@@ -5,7 +5,7 @@
 
 .faq_section {
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 100%;
   font-size: 20px;
   color:#fff;
@@ -64,3 +64,26 @@ p{
   color:#fff;
   text-decoration: underline;
 }
+
+
+.btn-modify, .btn-delete {
+  background-color: #58b99d;
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.6s;
+}
+
+.btn-delete {
+margin-left: 15px;
+margin-bottom: 10px;;
+}
+
+.btn-modify:hover, .btn-delete:hover {
+  background-color: #469680;
+}
+
